@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers\wx;
 
 use App\Admin\Extensions\OrderExcelExporter;
+use App\Admin\Extensions\OrderRefund;
 use App\Http\Requests\Admin\HandleRefundRequest;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -11,6 +12,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Encore\Admin\Widgets\Box;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Request;
 
@@ -32,7 +34,30 @@ class OrderController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Order());
-//        $grid->model()->getQueryBuilder()->dd();
+        $type = request()->get("type");
+        switch ($type) {
+            case 2:
+                $grid->model()->whereNotNull('paid_at')
+                    ->where('ship_status', Order::SHIP_STATUS_PENDING)
+                    ->where('refund_status', Order::REFUND_STATUS_PENDING);
+                break;
+            case 3:
+                $grid->model()->where('refund_status', Order::REFUND_STATUS_APPLIED);
+                break;
+            case 4:
+                $grid->model()->where('ship_status', Order::SHIP_STATUS_RECEIVED);
+                break;
+            default:
+        }
+
+        $grid->header(function ($query) {
+            $info = [];
+            $info['total_finished'] = Order::getFinishWhere()->count("id");
+            $info['total_unship'] = Order::getUnShipWhere()->count("id");             $info['total_unrefund'] = Order::getUnRefundWhere()->count("id");
+            $info['total_all'] = Order::query()->count("id");
+            $doughnut = view('admin.orders.header', compact('info'));
+            return new Box('订单状态展示', $doughnut);
+        });
 
         $grid->column('id', __('Id'));
         $grid->column('no', __('订单编号'));
@@ -43,20 +68,36 @@ class OrderController extends AdminController
         $grid->column('paid_at', __('支付时间'));
         $grid->column('payment_method', __('支付方式'));
         $grid->column('payment_no', __('流水号'));
-        $grid->column('refund_status', __('退款退货状态'));
+        $grid->column('refund_status', __('退款退货状态'))->display(function ($value) {
+            return isset(Order::$refundStatusMap[$value])?Order::$refundStatusMap[$value]:$value;
+        });
         $grid->column('refund_no', __('退款退货单号'));
         $grid->column('closed', __('是否关闭'));
         $grid->column('reply_status', __('是否评价'));
         $grid->column('cancel', __('是否取消'));
-        $grid->column('ship_status', __('物流状态'));
+        $grid->column('ship_status', __('物流状态'))->display(function ($value) {
+            return isset(Order::$shipStatusMap[$value])?Order::$shipStatusMap[$value]:$value;
+        });;
         $grid->column('ship_data', __('物流信息'));
-        $grid->column('extra', __('其他数据'));
+//        $grid->column('extra', __('其他数据'))->display(function ($value) {
+//            if ($value->reason) {
+//                return "申请退款：" . $value->reason;
+//            }
+//
+//            if ($value->refund_disagree_reason) {
+//                return "拒绝退款：" . $value->refund_disagree_reason;
+//            }
+//        });
         $grid->column('created_at', __('创建时间'));
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableDelete();
 //            $actions->disableView();
 //            $actions->add(new ModelList($actions->getKey(), 'order.info.list', '订单详情'));
+            if ($actions->row->refund_status == Order::REFUND_STATUS_APPLIED) {
+                $extra_json = $actions->row->extra;
+                $actions->add(new OrderRefund($actions->getKey(), 'admin.orders.handle_refund', '是否退款', $extra_json->reason??''));
+            }
         });
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
@@ -220,6 +261,7 @@ class OrderController extends AdminController
         }
         // 是否同意退款
         if ($request->input('agree')) {
+            // 同意退款的逻辑这里先留空
             // 清空拒绝退款理由
             $extra = $order->extra ?: [];
             unset($extra['refund_disagree_reason']);
@@ -239,7 +281,7 @@ class OrderController extends AdminController
             ]);
         }
 
-        return $order;
+        return response()->json(['code' => 200, 'message' => '操作成功']);
     }
 
     protected function _refundOrder(Order $order)

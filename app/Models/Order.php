@@ -135,4 +135,18 @@ class Order extends Model
 
         return $no;
     }
+
+    public static function getUnShipWhere() {
+        return self::query()->whereNotNull('paid_at')
+            ->where('ship_status', self::SHIP_STATUS_PENDING)
+            ->where('refund_status', self::REFUND_STATUS_PENDING);
+    }
+
+    public static function getUnRefundWhere() {
+        return self::query()->where('refund_status', self::REFUND_STATUS_APPLIED);
+    }
+
+    public static function getFinishWhere() {
+        return self::query()->where('ship_status', self::SHIP_STATUS_RECEIVED);
+    }
 }
