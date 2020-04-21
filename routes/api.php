@@ -21,8 +21,10 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
         ->group(function (){
             Route::post('authorizations','AuthorizationsController@store')
                 ->name('authorizations.store');
+            Route::middleware('auth:api')->group(function (){
+                Route::get('user', 'AuthorizationsController@me')
+                    ->name('user.me');
+            });
 
-            Route::get('user', 'AuthorizationsController@me')
-                ->name('user.me');
         });
 });
