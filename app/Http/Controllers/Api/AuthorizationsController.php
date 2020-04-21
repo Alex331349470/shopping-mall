@@ -21,7 +21,7 @@ class AuthorizationsController extends Controller
             throw new AuthenticationException('code不正确');
         }
 
-        $user = User::where('open_id',data['openid'])->first();
+        $user = User::where('open_id',$data['openid'])->first();
 
         if (!$user) {
             $attributes['session_key'] = $data['session_key'];
