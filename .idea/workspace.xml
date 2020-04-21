@@ -4,10 +4,7 @@
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/AuthorizationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/AuthorizationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_042640_create_user_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_042640_create_user_addresses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -201,7 +198,7 @@
       <workItem from="1587461318686" duration="1625000" />
       <workItem from="1587464157779" duration="1033000" />
       <workItem from="1587465312083" duration="15000" />
-      <workItem from="1587473058641" duration="5739000" />
+      <workItem from="1587473058641" duration="6331000" />
     </task>
     <servers />
   </component>

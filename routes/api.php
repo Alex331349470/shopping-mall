@@ -22,7 +22,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::post('authorizations','AuthorizationsController@store')
                 ->name('authorizations.store');
 
-            Route::post('users', 'UsersController@store')
-                ->name('users.store');
+            Route::get('user', 'AuthorizationsController@me')
+                ->name('user.me');
         });
 });

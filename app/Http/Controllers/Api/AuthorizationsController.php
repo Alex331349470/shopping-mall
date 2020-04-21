@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\AuthorizationRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
@@ -38,6 +39,11 @@ class AuthorizationsController extends Controller
             $token = auth('api')->login($user);
             return $this->respondWithToken($token)->setStatusCode(201);
         }
+    }
+
+    public function me(Request $request)
+    {
+        return new UserResource($request->user());
     }
 
     public function update()
