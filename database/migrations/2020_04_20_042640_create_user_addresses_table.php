@@ -15,7 +15,7 @@ class CreateUserAddressesTable extends Migration
     {
         Schema::create('user_addresses', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('自增id');
-            $table->integer('user_id')->index()->comment('外键user_id');
+            $table->integer('user_id')->index()->comment('外键用户id');
             $table->string('province')->comment('省');
             $table->string('city')->comment('市');
             $table->string('district')->comment('区');

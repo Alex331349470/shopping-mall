@@ -3,9 +3,8 @@
 namespace App\Http\Requests\Api;
 
 
-class AuthorizationRequest extends FormRequest
+class UserRequest extends FormRequest
 {
-
 
     /**
      * Get the validation rules that apply to the request.
