@@ -24,8 +24,9 @@ class AuthorizationsController extends Controller
         $user = User::where('open_id',$data['openid'])->first();
 
         if (!$user) {
-            $attributes['session_key'] = $data['session_key'];
             $decryptedData = $miniProgram->encryptor->decryptData($data['session_key'], $request->iv, $request->encryptedData);
+
+            $attributes['session_key'] = $data['session_key'];
             $attributes['name'] = $decryptedData['nickName'];
             $attributes['avatar'] = $decryptedData['avatarUrl'];
             $attributes['open_id'] = $decryptedData['openId'];
