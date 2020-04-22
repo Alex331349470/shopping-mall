@@ -14,8 +14,13 @@ class CreateOrderItemsTable extends Migration
     public function up()
     {
         Schema::create('order_items', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('id')->comment('自增id');
+            $table->unsignedBigInteger('order_id')->comment('外键订单id');
+            $table->unsignedBigInteger('good_id')->comment('外键商品id');
+            $table->unsignedInteger('amount')->comment('数量');
+            $table->decimal('price', 10, 2)->comment('单价');
+            $table->unsignedInteger('rating')->nullable()->comment('评分');
+            $table->timestamp('reviewed_at')->nullable();
         });
     }
 

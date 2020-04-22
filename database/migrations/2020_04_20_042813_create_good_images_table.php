@@ -14,7 +14,11 @@ class CreateGoodImagesTable extends Migration
     public function up()
     {
         Schema::create('good_images', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->comment('自增id');
+            $table->string('description')->nullable()->comment('商品图片描述');
+            $table->unsignedBigInteger('good_id')->index()->comment('外键商品id');
+            $table->string('image')->comment('商品图片');
+            $table->boolean('cover')->default(true)->comment('商品封面-浏览的第一张图片');
             $table->timestamps();
         });
     }

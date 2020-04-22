@@ -14,7 +14,12 @@ class CreateRepliesTable extends Migration
     public function up()
     {
         Schema::create('replies', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->comment('自增id');
+            $table->integer('good_id')->index()->comment('外键商品id');
+            $table->integer('user_id')->index()->comment('外键用户id');
+            $table->integer('order_id')->index()->comment('外键订单id');
+            $table->json('images')->nullable()->comment('评论图片json数组');
+            $table->text('content')->nullable()->comment('评论描述');
             $table->timestamps();
         });
     }

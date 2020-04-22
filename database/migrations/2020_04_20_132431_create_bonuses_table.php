@@ -13,8 +13,12 @@ class CreateBonusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bonuses', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('bounses', function (Blueprint $table) {
+            $table->bigIncrements('id')->comment('自增id');
+            $table->integer('user_id')->index()->comment('外键用户ID');
+            $table->integer('order_id')->index()->comment('订单ID');
+            $table->string('user_type')->default(0)->comment('0-普通客户 1-二级代销 2-一级代销');
+            $table->decimal('bonus')->default(0)->comment('返利金额');
             $table->timestamps();
         });
     }

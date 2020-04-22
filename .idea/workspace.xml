@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shopping-mall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopping-mall.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Ad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CartItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CartItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Good.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Good.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GoodImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GoodImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OrderItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserAddress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserAddress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_042813_create_good_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_042813_create_good_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_042858_create_cart_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_042858_create_cart_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_042936_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_042936_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_042953_create_order_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_042953_create_order_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_043017_create_ads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_043017_create_ads_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_043034_create_replies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_043034_create_replies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_132349_create_good_skus_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_132349_create_good_skus_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_20_132431_create_bonuses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_20_132431_create_bonuses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +219,9 @@
       <workItem from="1587465312083" duration="15000" />
       <workItem from="1587473058641" duration="9733000" />
       <workItem from="1587518626763" duration="16000" />
-      <workItem from="1587522513976" duration="6643000" />
+      <workItem from="1587522513976" duration="6818000" />
+      <workItem from="1587543249587" duration="2679000" />
+      <workItem from="1587560883764" duration="1121000" />
     </task>
     <servers />
   </component>
