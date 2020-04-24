@@ -1,14 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::post('payment/wechat/notify', 'ReturnsController@wechatNotify')
+    ->name('payment.wechat.notify');
 
+Route::post('payment/alipay/notify', 'ReturnsController@alipayNotify')
+    ->name('payment.alipay.notify');
 
+Route::get('payment/alipay/return', 'ReturnsController@alipayReturn')
+    ->name('payment.alipay.return');
