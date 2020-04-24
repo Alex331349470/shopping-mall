@@ -40,6 +40,8 @@ class Order extends Model
         'payment_no',
         'refund_status',
         'refund_no',
+        'user_type',
+        'bonus',
         'closed',
         'reviewed',
         'ship_status',

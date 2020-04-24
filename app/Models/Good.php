@@ -9,9 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Good extends Model
 {
     protected $fillable = [
-        'title','description','art','time','size','quality','type','style','discount','content','price','rating','stock','sold_count','review_count'];
+        'title','description', 'on_hot', 'on_sale','content','express_price','price', 'rating',
+        'category_id','good_no', 'stock','sold_count', 'review_count'
+        ];
+
     protected $casts = [
         'on_sale' => 'boolean', // on_sale 是一个布尔类型的字段
+        'on_hot' => 'boolean'
     ];
     // 与商品SKU关联
     public function images()
@@ -29,10 +33,6 @@ class Good extends Model
         return $this->hasMany(Reply::class);
     }
 
-    public function replyImages()
-    {
-        return $this->hasMany(ReplyImage::class);
-    }
 
     public function decreaseStock($amount)
     {

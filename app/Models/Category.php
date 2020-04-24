@@ -8,7 +8,7 @@ class Category extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'level', 'parent_id', 'is_directory','path'];
 
     public function goods()
     {
