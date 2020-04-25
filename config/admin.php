@@ -42,7 +42,7 @@ return [
     /*
      * Laravel-Admin 页面标题
      */
-    'title' => 'Gomine-Shop管理后台',
+    'title' => '宜佳优品管理后台',
 
     /*
      * 是否使用 https
