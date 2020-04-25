@@ -33,6 +33,11 @@ class Good extends Model
         return $this->hasMany(Reply::class);
     }
 
+    public function skus()
+    {
+        return $this->hasMany(GoodSku::class);
+    }
+
 
     public function decreaseStock($amount)
     {
