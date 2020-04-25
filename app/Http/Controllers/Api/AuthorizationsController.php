@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\AuthorizationRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Models\UserInfo;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
 class AuthorizationsController extends Controller
 {
-    public function store(AuthorizationRequest $request)
+    public function store(AuthorizationRequest $request, UserInfo $userInfo)
     {
         $code = $request->code;
 
@@ -31,6 +32,9 @@ class AuthorizationsController extends Controller
             $attributes['avatar'] = $decryptedData['avatarUrl'];
             $attributes['open_id'] = $decryptedData['openId'];
             $user = User::create($attributes);
+
+            $userInfo->user_id = $user->id;
+            $userInfo->save();
 
             $token = auth('api')->login($user);
             return $this->respondWithToken($token)->setStatusCode(201);

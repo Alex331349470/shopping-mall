@@ -34,8 +34,8 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
 
     Route::middleware('throttle:'.config('api.rate_limits.access'))
         ->group(function (){
-
             // 登录后可以访问的接口
+
             // 分类列表
             Route::get('categories', 'CategoriesController@index')
                 ->name('categories.index');
