@@ -17,7 +17,7 @@ class CreateAdsTable extends Migration
             $table->bigIncrements('id')->comment('自增id');
             $table->string('image')->comment('广告类型');
             $table->string('position')->nullable()->comment('广告位编号-前端约定');
-            $table->text('url')->nullable()->comment('url地址');
+            $table->text('good_id')->nullable()->comment('产品id');
             $table->timestamps();
         });
     }

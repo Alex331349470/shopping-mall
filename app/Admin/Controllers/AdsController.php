@@ -29,7 +29,7 @@ class AdsController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('image', __('Image'));
         $grid->column('position', __('Position'));
-        $grid->column('url', __('Url'));
+        $grid->column('good_id', __('Good Id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -49,7 +49,7 @@ class AdsController extends AdminController
         $show->field('id', __('Id'));
         $show->field('image', __('Image'));
         $show->field('position', __('Position'));
-        $show->field('url', __('Url'));
+        $show->field('good_id', __('Good Id'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -67,7 +67,7 @@ class AdsController extends AdminController
 
         $form->image('image', __('Image'));
         $form->text('position', __('Position'));
-        $form->textarea('url', __('Url'));
+        $form->text('good_id', __('Good id'));
 
         return $form;
     }
