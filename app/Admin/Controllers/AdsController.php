@@ -15,7 +15,7 @@ class AdsController extends AdminController
      *
      * @var string
      */
-    protected $title = 'App\Models\Ad';
+    protected $title = '广告位';
 
     /**
      * Make a grid builder.
