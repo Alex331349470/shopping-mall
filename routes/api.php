@@ -39,6 +39,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             // 分类列表
             Route::get('categories', 'CategoriesController@index')
                 ->name('categories.index');
+            //单个id分类下的二级分类
+            Route::get('categories/{category}/directories','CategoriesController@directory')
+                ->name('directories.directory');
             //获取分类下所有商品
             Route::get('categories/{category}/goods','CategoriesController@goodIndex')
                 ->name('goods.index');

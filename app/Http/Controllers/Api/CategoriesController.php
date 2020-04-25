@@ -15,6 +15,16 @@ class CategoriesController extends Controller
         return CategoryResource::collection(Category::all());
     }
 
+    public function directory(Category $category)
+    {
+        $categories = Category::query()->where('parent_id', $category->id)->get();
+        if (!$categories) {
+            abort(403,'无二级分类');
+        }
+        CategoryResource::wrap('data');
+        return CategoryResource::collection($categories);
+    }
+
     public function goodIndex(Category $category)
     {
         $goods = $category->goods()->with('images','category')->paginate(9);
