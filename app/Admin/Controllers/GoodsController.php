@@ -94,6 +94,10 @@ class GoodsController extends AdminController
         $form->decimal('price', __('Price'))->default(0.00);
         $form->decimal('rating', __('Rating'))->default(5.00);
         $form->number('category_id', __('Category id'));
+        $form->hasMany('images', '图片列表', function (Form\NestedForm $form) {
+            $form->text('description', '图片描述');
+            $form->image('image', '产品图片')->rules('image');
+        });
         $form->text('good_no', __('Good no'));
         $form->number('stock', __('Stock'));
         $form->number('sold_count', __('Sold count'));
