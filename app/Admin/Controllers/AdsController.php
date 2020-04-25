@@ -15,7 +15,7 @@ class AdsController extends AdminController
      *
      * @var string
      */
-    protected $title = '广告位';
+    protected $title = 'App\Models\Ad';
 
     /**
      * Make a grid builder.
@@ -29,7 +29,7 @@ class AdsController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('image', __('Image'));
         $grid->column('position', __('Position'));
-        $grid->column('good_id', __('Good Id'));
+        $grid->column('good_id', __('Good id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -49,7 +49,7 @@ class AdsController extends AdminController
         $show->field('id', __('Id'));
         $show->field('image', __('Image'));
         $show->field('position', __('Position'));
-        $show->field('good_id', __('Good Id'));
+        $show->field('good_id', __('Good id'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -67,7 +67,7 @@ class AdsController extends AdminController
 
         $form->image('image', __('Image'));
         $form->text('position', __('Position'));
-        $form->text('good_id', __('Good id'));
+        $form->textarea('good_id', __('Good id'));
 
         return $form;
     }
