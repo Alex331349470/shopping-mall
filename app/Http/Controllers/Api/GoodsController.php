@@ -46,4 +46,15 @@ class GoodsController extends Controller
             return new GoodResource($goods);
         }
     }
+
+    public function hotIndex(Request $request)
+    {
+        $goods = Good::query()->where('on_sale', true)->where('on_hot',true)->with('images','category')->paginate(4);
+
+        if (!$goods) {
+            abort(403, '没有商品');
+        }
+
+        return new GoodResource($goods);
+    }
 }
