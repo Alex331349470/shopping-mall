@@ -12,7 +12,12 @@ class CategoriesController extends Controller
     public function index()
     {
         CategoryResource::wrap('data');
-        return CategoryResource::collection(Category::all());
+        $categories = Category::query()->whereNull('parent_id')->get();
+
+        if (!$categories) {
+            abort(403, '无分类目录');
+        }
+        return CategoryResource::collection($categories);
     }
 
     public function directory(Category $category)
