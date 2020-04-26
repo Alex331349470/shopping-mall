@@ -49,6 +49,7 @@ class GoodsController extends Controller
 
     public function hotIndex(Request $request)
     {
+        dd('test');
         $goods = Good::query()->where('on_sale', true)->where('on_hot',true)->with('images','category')->paginate(4);
 
         if (!$goods) {
