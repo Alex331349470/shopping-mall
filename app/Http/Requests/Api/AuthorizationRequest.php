@@ -17,7 +17,9 @@ class AuthorizationRequest extends FormRequest
         return [
             'code' => 'required|string',
             'encryptedData' => 'required|string',
-            'iv' => 'required|string'
+            'iv' => 'required|string',
+            'user_id' => 'string'
+
         ];
     }
 }

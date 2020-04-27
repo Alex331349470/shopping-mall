@@ -30,7 +30,7 @@ class CloseOrder implements ShouldQueue
         // 判断对应的订单是否已经被支付
         // 如果已经支付则不需要关闭订单，直接退出
         if ($this->order->paid_at) {
-            return;
+            return ;
         }
         // 通过事务执行 sql
         \DB::transaction(function() {
