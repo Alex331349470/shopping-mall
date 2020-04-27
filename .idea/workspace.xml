@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PaymentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PaymentsController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +238,7 @@
       <workItem from="1587957617844" duration="1199000" />
       <workItem from="1587969559295" duration="3487000" />
       <workItem from="1587983257095" duration="5538000" />
-      <workItem from="1587994488546" duration="271000" />
+      <workItem from="1587994488546" duration="2040000" />
     </task>
     <servers />
   </component>
