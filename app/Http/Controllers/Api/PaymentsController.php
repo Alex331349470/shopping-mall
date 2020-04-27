@@ -19,6 +19,7 @@ class PaymentsController extends Controller
             'out_trade_no' => $order->no,
             'total_fee' => $order->total_amount * 100,
             'body' => '支付订单:' . $order->no,
+            'openid' => $request->user()->open_id
         ]);
     }
 
