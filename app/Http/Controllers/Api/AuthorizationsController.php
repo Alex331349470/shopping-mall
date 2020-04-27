@@ -6,6 +6,7 @@ use App\Http\Requests\Api\AuthorizationRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Models\UserInfo;
+use GuzzleHttp\Client;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
@@ -66,6 +67,19 @@ class AuthorizationsController extends Controller
     {
         auth('api')->logout();
         return response(null, 204);
+    }
+
+    public function getAccessToken(Client $client)
+    {
+        $response = $client->get('https://api.weixin.qq.com/cgi-bin/token',[
+            'query' => [
+                'grant_type' => 'client_credential',
+                'appid' => env('WECHAT_MINI_PROGRAM_APPID'),
+                'secret' => env('WECHAT_MINI_PROGRAM_SECRET')
+            ]
+        ]);
+
+       return $response;
     }
 
     protected function respondWithToken($token)

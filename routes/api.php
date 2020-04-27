@@ -30,12 +30,14 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             // 删除token
             Route::delete('authorizations/current', 'AuthorizationsController@destroy')
                 ->name('authorizations.destroy');
+
+            Route::get('authorizations/access_token', 'AuthorizationsController@getAccessToken')
+                ->name('authorizations.access_token');
         });
 
     Route::middleware('throttle:'.config('api.rate_limits.access'))
         ->group(function (){
-            // 登录后可以访问的接口
-
+            // 登录后可以访问的接
             // 分类列表
             Route::get('categories', 'CategoriesController@index')
                 ->name('categories.index');
