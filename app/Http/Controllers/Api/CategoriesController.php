@@ -32,7 +32,7 @@ class CategoriesController extends Controller
 
     public function goodIndex(Category $category)
     {
-        $goods = $category->goods()->with('images','category')->paginate(9);
+        $goods = $category->goods()->with('images','category')->paginate(8);
         GoodResource::wrap('data');
         return new GoodResource($goods);
     }

@@ -47,7 +47,7 @@ return [
     /*
      * 是否使用 https
      */
-    'secure' => env('ADMIN_HTTPS', true),
+    'secure' => env('ADMIN_HTTPS', false),
 
     /*
      * Laravel-Admin 用户认证设置
