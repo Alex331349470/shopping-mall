@@ -86,12 +86,14 @@ class GoodsController extends Controller
         if ($user->favoriteGoods()->find($good->id)) {
             return response()->json([
                 'message' => '商品已收藏',
-            ])->setStatusCode(100001);
+                'code' => 100001
+            ]);
         }
 
         return response()->json([
-            'message' => '商品未收藏'
-        ])->setStatusCode(100002);
+            'message' => '商品未收藏',
+            'code' => 100002
+        ]);
     }
 
     public function favorites(Request $request)
