@@ -47,9 +47,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             //获取分类下所有商品
             Route::get('categories/{category}/goods','CategoriesController@goodIndex')
                 ->name('goods.index');
-            //获取单个id商品详情
-            Route::get('goods/{good}', 'GoodsController@show')
-                ->name('good.show');
+
             //获取单个id商品详情
             Route::get('goods', 'GoodsController@hotIndex')
                 ->name('good.hotIndex');
@@ -169,6 +167,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 Route::get('reply_images/{reply_image}','ReplyImagesController@show')
                     ->name('reply_images.show');
             });
+            //获取单个id商品详情
+            Route::get('goods/{good}', 'GoodsController@show')
+                ->name('good.show');
         });
 
     Route::middleware('auth:api')->group(function (){

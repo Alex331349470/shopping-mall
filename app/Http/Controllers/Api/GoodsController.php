@@ -98,7 +98,7 @@ class GoodsController extends Controller
 
     public function favorites(Request $request)
     {
-        $goods = $request->user()->favoriteGoods()->paginate(16);
+        $goods = $request->user()->favoriteGoods()->with('images','category')->paginate(16);
 
         return new GoodResource($goods);
     }
