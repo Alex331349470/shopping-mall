@@ -75,6 +75,20 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 Route::post('images', 'ImagesController@store')
                     ->name('images.store');
 
+                //收藏商品
+                Route::post('goods/{good}/favorite','GoodsController@favor')
+                    ->name('goods.favor');
+
+                //取消收藏
+                Route::delete('goods/{good}/favorite','GoodsController@disfavor')
+                    ->name('goods.disfavor');
+
+                //商品收藏状态
+                Route::get('goods/{good}/favorite/status','GoodsController@favoriteStatus')
+                    ->name('goods.favorite.status');
+                //用户收藏商品列表
+                Route::get('goods/favorites','GoodsController@favorites')
+                    ->name('goods.favorites');
                 //用户地址列表
                 Route::get('user_addresses','UserAddressesController@index')
                     ->name('user.addresses.index');

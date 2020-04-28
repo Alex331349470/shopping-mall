@@ -57,4 +57,48 @@ class GoodsController extends Controller
 
         return new GoodResource($goods);
     }
+
+    public function favor(Good $good, Request $request)
+    {
+        $user = $request->user();
+
+        if ($user->favoriteGoods()->find($good->id)) {
+            abort(403,'该商品已收藏');
+        }
+
+        $user->favoriteGoods()->attach($good);
+
+        return response(null,201);
+    }
+
+    public function disfavor(Good $good,Request $request)
+    {
+        $user = $request->user();
+        $user->favoriteGoods()->detach($good);
+
+        return response(null,204);
+    }
+
+    public function favoriteStatus(Good $good, Request $request)
+    {
+        $user = $request->user();
+
+        if ($user->favoriteGoods()->find($good->id)) {
+            return response()->json([
+                'message' => '商品已收藏',
+            ])->setStatusCode(100001);
+        }
+
+        return response()->json([
+            'message' => '商品未收藏'
+        ])->setStatusCode(100002);
+    }
+
+    public function favorites(Request $request)
+    {
+        $goods = $request->user()->favoriteGoods()->with('images','category')->paginate(16);
+
+        return new GoodResource($goods);
+    }
+
 }

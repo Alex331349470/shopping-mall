@@ -81,6 +81,14 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(Reply::class);
     }
+
+    public function favoriteGoods()
+    {
+        return $this->belongsToMany(Good::class,'user_favorite_goods')
+            ->withTimestamps()
+            ->orderBy('user_favorite_goods.created_at', 'desc');
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

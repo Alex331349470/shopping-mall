@@ -36,7 +36,7 @@ class AuthorizationsController extends Controller
 
             $userInfo->user_id = $user->id;
 
-            if ($request->user_id) {
+            if (!empty($request->user_id)) {
                 $userInfo->parent_id = $request->user_id;
             }
 
