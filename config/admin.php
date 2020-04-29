@@ -5,7 +5,7 @@ return [
     /*
      * 站点标题
      */
-    'name' => 'Gomine Shop',
+    'name' => '宜佳优品',
 
     /*
      * 页面顶部 Logo
@@ -47,7 +47,7 @@ return [
     /*
      * 是否使用 https
      */
-    'secure' => env('ADMIN_HTTPS', false),
+    'secure' => env('ADMIN_HTTPS', true),
 
     /*
      * Laravel-Admin 用户认证设置
