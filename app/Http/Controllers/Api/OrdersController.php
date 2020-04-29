@@ -127,7 +127,7 @@ class OrdersController extends Controller
     {
         $order = Order::query()->where('no',$request->no)->first();
 
-        $order->received_status = true;
+        $order->ship_status = Order::SHIP_STATUS_RECEIVED;
         $order->save();
 
         return new OrderResource($order);
