@@ -29,7 +29,6 @@ class OrdersController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('no', __('No'));
         $grid->column('user_id', __('User id'));
-        $grid->column('address', __('Address'));
         $grid->column('total_amount', __('Total amount'));
         $grid->column('remark', __('Remark'));
         $grid->column('paid_at', __('Paid at'));
@@ -64,7 +63,6 @@ class OrdersController extends AdminController
         $show->field('id', __('Id'));
         $show->field('no', __('No'));
         $show->field('user_id', __('User id'));
-        $show->field('address', __('Address'));
         $show->field('total_amount', __('Total amount'));
         $show->field('remark', __('Remark'));
         $show->field('paid_at', __('Paid at'));
@@ -97,7 +95,6 @@ class OrdersController extends AdminController
 
         $form->text('no', __('No'));
         $form->number('user_id', __('User id'));
-        $form->textarea('address', __('Address'));
         $form->decimal('total_amount', __('Total amount'));
         $form->textarea('remark', __('Remark'));
         $form->datetime('paid_at', __('Paid at'))->default(date('Y-m-d H:i:s'));
