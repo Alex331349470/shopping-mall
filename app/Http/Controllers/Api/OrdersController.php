@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\Api\ApplyRefundRequest;
 use App\Http\Requests\Api\OrderReceiveReuqest;
 use App\Http\Requests\Api\OrderRequest;
 use App\Http\Resources\OrderResource;
@@ -162,6 +163,32 @@ class OrdersController extends Controller
         return response()->json([
             '0' => '订单未支付'
         ])->setStatusCode(200);
+    }
+
+    public function applyRefund(Order $order, ApplyRefundRequest $request)
+    {
+        $user_id = $request->user()->id;
+        if ($order->user_id !== $user_id) {
+            abort(403,'该订单不是当前用户订单');
+        }
+
+        if (!$order->paid_at) {
+            abort(403,'该订单未支付，不可退款');
+        }
+
+        if ($order->refund_data !== Order::REFUND_STATUS_PENDING) {
+            abort(403,'该订单已经省去过退款，请勿重复操作');
+        }
+
+        $extra = $order->extra ?: [];
+        $extra['refund_reason'] = $request->reason;
+
+        $order->update([
+            'refund_status' => Order::REFUND_STATUS_APPLIED,
+            'extra' => $extra
+        ]);
+
+        return new OrderResource($order);
     }
 
 }

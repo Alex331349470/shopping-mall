@@ -147,6 +147,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 //订单回复列表
                 Route::get('orders/replies','OrdersController@replyIndex')
                     ->name('orders.replies.index');
+                //订单申请退款
+                Route::post('orders/{order}/apply_refund', 'OrdersController@applyRefund')
+                    ->name('orders.apply_refund');
                 //订单微信支付
                 Route::get('payment/{order}/wechat','PaymentsController@payByWechat')
                     ->name('payment.wechat');
