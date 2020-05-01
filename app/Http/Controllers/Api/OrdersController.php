@@ -151,6 +151,14 @@ class OrdersController extends Controller
         return new OrderResource($order);
     }
 
+    public function notice(Order $order)
+    {
+        $order->ship_status = Order::SHIP_STATUS_NOTICE;
+        $order->save();
+
+        return new OrderResource($order);
+    }
+
     public function wechatMessage(Order $order)
     {
         if ($order->paid_at) {
