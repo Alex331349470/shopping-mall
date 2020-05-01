@@ -35,7 +35,7 @@ class OrdersController extends Controller
 
     public function show(Order $order)
     {
-        $order = $order->with('user','items.good.images','items.good.category')->first();
+        $order = $order->with('user','items.good.images','items.good.category')->whereId($order->id)->first();
         return new OrderResource($order);
     }
 

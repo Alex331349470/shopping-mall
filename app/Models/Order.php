@@ -13,8 +13,10 @@ class Order extends Model
     const REFUND_STATUS_FAILED = 'failed';
 
     const SHIP_STATUS_PENDING = 'pending';
+    const SHIP_STATUS_NOTICE = 'noticed';
     const SHIP_STATUS_DELIVERED = 'delivered';
     const SHIP_STATUS_RECEIVED = 'received';
+
 
     public static $refundStatusMap = [
         self::REFUND_STATUS_PENDING => '未退款',
@@ -27,6 +29,7 @@ class Order extends Model
     public static $shipStatusMap = [
         self::SHIP_STATUS_PENDING => '未发货',
         self::SHIP_STATUS_DELIVERED => '已发货',
+        self::SHIP_STATUS_NOTICE => '提醒发货',
         self::SHIP_STATUS_RECEIVED => '已收货',
     ];
 
