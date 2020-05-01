@@ -29,6 +29,7 @@ class RepliesController extends Controller
             'order_id' => $request->order_id,
             'images' => json_encode($images),
             'content' => $request->replyContent,
+            'rating' => $request->rating,
         ]);
 
         $order = Order::find($request->order_id);

@@ -27,7 +27,7 @@ class OrdersController extends Controller
 
     public function replyIndex(Request $request)
     {
-        $orders = Order::where('user_id',$request->user()->id)->with('items.good.images')->orderBy('created_at','desc')->get();
+        $orders = Order::where('user_id',$request->user()->id)->with('user','items.good.images')->orderBy('created_at','desc')->get();
 
         OrderResource::wrap('data');
         return new OrderResource($orders);
