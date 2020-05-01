@@ -35,7 +35,7 @@ class OrdersController extends Controller
 
     public function show(Order $order)
     {
-        $order = $order->with('items')->first();
+        $order = $order->with('user','items.good.images','items.good.category')->first();
         return new OrderResource($order);
     }
 
@@ -190,5 +190,6 @@ class OrdersController extends Controller
 
         return new OrderResource($order);
     }
+
 
 }
