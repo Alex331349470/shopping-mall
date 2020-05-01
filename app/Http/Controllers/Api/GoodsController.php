@@ -6,6 +6,7 @@ use App\Http\Resources\GoodResource;
 use App\Http\Resources\ReplyImageResource;
 use App\Http\Resources\ReplyResource;
 use App\Models\Good;
+use App\Models\Reply;
 use Illuminate\Http\Request;
 
 class GoodsController extends Controller
@@ -18,7 +19,8 @@ class GoodsController extends Controller
     public function replyIndex(Good $good)
     {
         ReplyResource::wrap('data');
-        return new ReplyResource($good->replies);
+        $replies = Reply::query()->whereGoodId($good->id)->with('user')->get();
+        return new ReplyResource($replies);
     }
 
     public function replyImageIndex(Good $good)
