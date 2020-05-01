@@ -16,8 +16,8 @@ class ReplyResource extends JsonResource
      */
     public function toArray($request)
     {
-        return $request->user_id;
-//        $data = parent::toArray($request);
+        $data = parent::toArray($request);
+        return $data->user_id;
 //        $data['user'] = new UserResource(User::find($data->user_id));
 //
 //        return $data;
