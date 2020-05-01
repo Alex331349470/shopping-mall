@@ -16,10 +16,10 @@ class ReplyResource extends JsonResource
      */
     public function toArray($request)
     {
-        dd($request->user_id);
-        $data = parent::toArray($request);
-        $data['user'] = new UserResource(User::find($data->user_id));
-
-        return $data;
+        return $request->user_id;
+//        $data = parent::toArray($request);
+//        $data['user'] = new UserResource(User::find($data->user_id));
+//
+//        return $data;
     }
 }
