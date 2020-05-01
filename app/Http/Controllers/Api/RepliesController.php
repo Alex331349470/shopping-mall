@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\ReplyRequest;
 use App\Http\Resources\ReplyResource;
+use App\Models\Order;
 use App\Models\Reply;
 use App\Models\ReplyImage;
 use Illuminate\Http\Request;
@@ -29,6 +30,10 @@ class RepliesController extends Controller
             'images' => json_encode($images),
             'content' => $request->replyContent,
         ]);
+
+        $order = Order::find($request->order_id);
+        $order->reply_status = true;
+        $order->save();
 
         return new ReplyResource($reply);
     }
