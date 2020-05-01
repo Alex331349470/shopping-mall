@@ -139,7 +139,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 Route::patch('orders/{order}/cancel','OrdersController@cancelled')
                     ->name('order.cancel');
                 //确认收货
-                Route::patch('orders/{order}','OrdersController@received')
+                Route::put('orders/{order}','OrdersController@received')
                     ->name('order.status.received');
                 //订单查询
                 Route::post('orders/search','OrdersController@search')
