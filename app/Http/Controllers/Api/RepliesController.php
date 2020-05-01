@@ -36,7 +36,7 @@ class RepliesController extends Controller
         $order->reply_status = true;
         $order->save();
 
-        return new ReplyResource($reply);
+        return new ReplyResource($reply->with(user));
     }
 
     public function index(Request $request)
