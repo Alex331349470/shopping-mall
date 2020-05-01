@@ -18,7 +18,7 @@ class GoodsController extends Controller
     public function replyIndex(Good $good)
     {
         ReplyResource::wrap('data');
-        return new ReplyResource($good->replies->with('user'));
+        return new ReplyResource($good->replies);
     }
 
     public function replyImageIndex(Good $good)

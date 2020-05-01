@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ReplyResource extends JsonResource
@@ -15,7 +16,9 @@ class ReplyResource extends JsonResource
      */
     public function toArray($request)
     {
-        return  parent::toArray($request);
+        $data = parent::toArray($request);
+        $data['user'] = new UserResource(User::find($this->user_id));
 
+        return $data;
     }
 }
