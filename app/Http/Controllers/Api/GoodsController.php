@@ -39,8 +39,7 @@ class GoodsController extends Controller
             // 模糊搜索商品标题、商品详情
             $builder->where(function ($query) use ($like) {
                 $query->where('title', 'like', $like)
-                    ->orWhere('description', 'like', $like)
-                    ->orWhere('art', 'like', $like);
+                    ->orWhere('description', 'like', $like);
             });
 
             $goods = $builder->with('images','category')->paginate(9);
