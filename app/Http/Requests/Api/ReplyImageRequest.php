@@ -15,7 +15,7 @@ class ReplyImageRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required',
+            'image' => 'required|image',
             'order_id' => 'required|numeric',
             'good_id' => 'required|numeric'
         ];

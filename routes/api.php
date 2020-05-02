@@ -63,17 +63,15 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             //商品搜索
             Route::post('goods/search','GoodsController@index')
                 ->name('goods.search,index');
-
-            //上传图片
-            Route::post('images', 'ImagesController@store')
-                ->name('images.store');
             //用户认证API
             Route::middleware('auth:api')->group(function (){
                 //登录用户信息
                 Route::get('user', 'AuthorizationsController@me')
                     ->name('user.me');
 
-
+                //上传图片
+                Route::post('images', 'ImagesController@store')
+                    ->name('images.store');
 
                 //收藏商品
                 Route::post('goods/{good}/favorite','GoodsController@favor')
