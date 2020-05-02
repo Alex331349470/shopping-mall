@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/ReplyImageRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/ReplyImageRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -169,15 +171,15 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/database/migrations" />
       <recent name="$PROJECT_DIR$/resources/wechat_pay" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/Api" />
       <recent name="$PROJECT_DIR$/app/Http/Resources" />
-      <recent name="$PROJECT_DIR$/app/Observers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,6 +250,8 @@
       <workItem from="1588208912451" duration="2398000" />
       <workItem from="1588323603223" duration="14748000" />
       <workItem from="1588345581931" duration="4390000" />
+      <workItem from="1588389607366" duration="776000" />
+      <workItem from="1588399517222" duration="3281000" />
     </task>
     <servers />
   </component>
