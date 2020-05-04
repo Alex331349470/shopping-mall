@@ -13,7 +13,7 @@ class UserAddressesController extends Controller
     {
         $user = $request->user();
         $addresses = $user->addresses;
-        
+
         if (empty($addresses)) {
             abort(403, '用户未添加地址');
         }
