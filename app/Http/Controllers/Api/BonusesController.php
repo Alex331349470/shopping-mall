@@ -9,8 +9,7 @@ class BonusesController extends Controller
 {
     public function index(Request $request)
     {
-        $bonuses = $request->user()->bonuses()->with('user')->paginate(6);
-        if (empty($bonuses)) {
+        if (!($bonuses = $request->user()->bonuses()->with('user')->paginate(6))) {
             abort(403, '用户没有收益');
         }
         return new BonusResource($bonuses);
