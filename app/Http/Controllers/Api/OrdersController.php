@@ -185,7 +185,7 @@ class OrdersController extends Controller
         }
 
         if ($order->refund_data !== Order::REFUND_STATUS_PENDING) {
-            abort(403,'该订单已经省去过退款，请勿重复操作');
+            abort(403,'该订单已经申请过退款，请勿重复操作');
         }
 
         $extra = $order->extra ?: [];

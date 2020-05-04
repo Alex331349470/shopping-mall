@@ -73,6 +73,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 Route::post('images', 'ImagesController@store')
                     ->name('images.store');
 
+                Route::get('user/bonuses', 'BonusesController@index')
+                    ->name('user.bonuses.index');
+
                 //收藏商品
                 Route::post('goods/{good}/favorite','GoodsController@favor')
                     ->name('goods.favor');
@@ -172,6 +175,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 //该api作废
                 Route::get('reply_images/{reply_image}','ReplyImagesController@show')
                     ->name('reply_images.show');
+
             });
             //获取单个id商品详情
             Route::get('goods/{good}', 'GoodsController@show')
