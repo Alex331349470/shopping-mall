@@ -13,4 +13,13 @@ class BonusesController extends Controller
         BonusResource::wrap('data');
         return new BonusResource($bonuses);
     }
+
+    public function bonusTotal(Request $request)
+    {
+        $total = \DB::table('bonuses')->where('user_id',$request->user()->id)->sum('bonus');
+
+        return response([
+            'total' => $total
+        ])->setStatusCode(200);
+    }
 }

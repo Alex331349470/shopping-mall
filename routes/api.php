@@ -72,6 +72,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 //用户收益表
                 Route::get('user/bonuses', 'BonusesController@index')
                     ->name('user.bonuses.index');
+                //用户收益总和
+                Route::get('user/bonuses/total','BonusesController@bonusTotal')
+                    ->name('user.bonuses.total');
                 //上传图片
                 Route::post('images', 'ImagesController@store')
                     ->name('images.store');
