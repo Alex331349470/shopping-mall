@@ -184,7 +184,7 @@ class OrdersController extends Controller
             abort(403,'该订单未支付，不可退款');
         }
 
-        if ($order->refund_data !== Order::REFUND_STATUS_PENDING) {
+        if ($order->refund_data !== Order::REFUND_STATUS_APPLIED) {
             abort(403,'该订单已经申请过退款，请勿重复操作');
         }
 
