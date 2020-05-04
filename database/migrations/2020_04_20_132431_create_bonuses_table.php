@@ -13,7 +13,7 @@ class CreateBonusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bounses', function (Blueprint $table) {
+        Schema::create('bonuses', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('自增id');
             $table->integer('user_id')->index()->comment('外键用户ID');
             $table->integer('order_id')->index()->comment('订单ID');

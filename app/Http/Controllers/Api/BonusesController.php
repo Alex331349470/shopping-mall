@@ -9,10 +9,8 @@ class BonusesController extends Controller
 {
     public function index(Request $request)
     {
-        if (!file_exists($bonuses = $request->user()->bonuses()->with('user')->paginate(6))) {
-            abort(403,'用户没有收益');
-        }
-
+        $bonuses = $request->user()->bonuses()->with('user')->paginate(6);
+        BonusResource::wrap('data');
         return new BonusResource($bonuses);
     }
 }
