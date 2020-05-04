@@ -25,12 +25,12 @@ class CreateOrdersTable extends Migration
             $table->string('payment_no')->nullable()->comment('支付流水号');
             $table->string('user_type')->default(0)->comment('用户类型 0-普通客户 1-二级代销 2-一级代销');
             $table->decimal('bonus')->default(0)->comment('订单返利');
-            $table->string('refund_status')->default('refund_pending')->comment('退款退货状态');
+            $table->string('refund_status')->default('pending')->comment('退款退货状态');
             $table->string('refund_no', 100)->unique()->nullable()->comment('退款退货单号');
             $table->boolean('closed')->default(false)->comment('订单是否关闭');
             $table->boolean('reply_status')->default(0)->comment('订单是否已评价');
             $table->boolean('cancel')->default(0)->comment('订单是否取消');
-            $table->string('ship_status')->default('ship_pending')->comment('订单物流状态');
+            $table->string('ship_status')->default('pending')->comment('订单物流状态');
             $table->text('ship_data')->nullable()->comment('物流信息');
             $table->text('extra')->nullable()->comment('其他订单额外数据');
             $table->timestamps();
