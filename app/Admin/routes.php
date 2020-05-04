@@ -26,6 +26,8 @@ Route::group([
     $router->get('ads/{id}/edit', 'AdsController@edit');
     $router->put('ads/{id}', 'AdsController@update');
 
+    $router->resource('bonuses', \App\Admin\Controllers\BonusesController::class);
+
     $router->get('categories','CategoriesController@index');
     $router->get('categories/create','CategoriesController@create');
     $router->post('categories','CategoriesController@store');
