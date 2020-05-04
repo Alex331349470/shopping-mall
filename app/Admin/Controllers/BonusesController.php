@@ -26,6 +26,13 @@ class BonusesController extends AdminController
     {
         $grid = new Grid(new Bonus);
 
+        $grid->column('id', __('Id'));
+        $grid->column('user_id', __('User Id'));
+        $grid->column('order_id', __('Order id'));
+        $grid->column('type', __('Type'));
+        $grid->column('bonus', __('Bonus'));
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
 
         return $grid;
@@ -41,6 +48,13 @@ class BonusesController extends AdminController
     {
         $show = new Show(Bonus::findOrFail($id));
 
+        $grid->field('id', __('Id'));
+        $grid->field('user_id', __('User Id'));
+        $grid->field('order_id', __('Order id'));
+        $grid->field('type', __('Type'));
+        $grid->field('bonus', __('Bonus'));
+        $grid->field('created_at', __('Created at'));
+        $grid->field('updated_at', __('Updated at'));
 
 
         return $show;
@@ -55,7 +69,10 @@ class BonusesController extends AdminController
     {
         $form = new Form(new Bonus);
 
-
+        $grid->number('user_id', __('User Id'));
+        $grid->number('order_id', __('Order id'));
+        $grid->number('type', __('Type'));
+        $grid->decimal('bonus', __('Bonus'));
 
         return $form;
     }
