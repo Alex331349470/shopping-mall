@@ -14,7 +14,7 @@ class AddOrderIdToCouponsTable extends Migration
     public function up()
     {
         Schema::table('coupons', function (Blueprint $table) {
-            $table->integer('order_id')->after('user_id');
+            $table->integer('order_id')->nullable()->after('user_id');
         });
     }
 
