@@ -12,8 +12,8 @@ class CouponsController extends Controller
     public function store(CouponRequest $request)
     {
         $coupon = Coupon::query()->where('user_id', $request->user_id)->doesntExist();
-        
-        if ($coupon) {
+
+        if (!$coupon) {
             abort(403,'用户已经有优惠券');
         }
 
