@@ -7,6 +7,7 @@ use App\Http\Requests\Api\OrderReceiveReuqest;
 use App\Http\Requests\Api\OrderRequest;
 use App\Http\Resources\OrderResource;
 use App\Jobs\CloseOrder;
+use App\Models\Coupon;
 use App\Models\Good;
 use App\Models\UserAddress;
 use App\Models\Order;
@@ -93,8 +94,12 @@ class OrdersController extends Controller
                 }
             }
 
-            if ($request->coupon) {
-                $totalAmount -= $request->coupon;
+            if ($request->coupon_id) {
+                $coupon = Coupon::query()->where('id', $request->coupon_id)->first();
+                $totalAmount -= $coupon->coupon;
+                $coupon->order_id = $order->id;
+                $coupon->used = true;
+                $coupon->save();
             }
             // 更新订单总金额
             $order->update(['total_amount' => $totalAmount]);
