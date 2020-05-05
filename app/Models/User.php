@@ -94,6 +94,11 @@ class User extends Authenticatable implements JWTSubject
             ->orderBy('user_favorite_goods.created_at', 'desc');
     }
 
+    public function coupon()
+    {
+        return $this->hasOne(Coupon::class);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
