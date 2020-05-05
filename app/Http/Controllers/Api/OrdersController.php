@@ -93,6 +93,9 @@ class OrdersController extends Controller
                 }
             }
 
+            if ($request->coupon) {
+                $totalAmount -= $request->coupon;
+            }
             // 更新订单总金额
             $order->update(['total_amount' => $totalAmount]);
 
