@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\CouponRequest;
+use App\Http\Resources\CouponResource;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
 
@@ -20,5 +21,12 @@ class CouponsController extends Controller
         ]);
 
         return response(null,201);
+    }
+
+    public function index(Request $request)
+    {
+        $coupon = Coupon::query()->whereUserId($request->user()->id)->first();
+
+        return new CouponResource($coupon);
     }
 }
