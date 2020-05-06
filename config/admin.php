@@ -47,7 +47,7 @@ return [
     /*
      * 是否使用 https
      */
-    'secure' => env('ADMIN_HTTPS', true),
+    'secure' => env('ADMIN_HTTPS', false),
 
     /*
      * Laravel-Admin 用户认证设置
@@ -276,5 +276,33 @@ return [
 //                'height' => '200px',
 //            ]
 //        ]
+        'ueditor' => [
+
+            // 如果要关掉这个扩展，设置为false
+            'enable' => true,
+
+            // 编辑器的前端配置 参考：http://fex.baidu.com/ueditor/#start-config
+            'config' => [
+                'initialFrameHeight' => 400, // 例如初始化高度
+            ],
+            // 'field_type' => '自定义名字'
+        ]
+    ],
+
+    'category_level' => [
+        '一级栏目',
+        '二级栏目',
+    ],
+
+    'gender' => [
+        '0' => '保密',
+        '1' => '男',
+        '2' => '女',
+    ],
+
+    'user_type' => [
+        '0' => '普通用户',
+        '1' => '二级代理',
+        '2' => '一级代理',
     ],
 ];
