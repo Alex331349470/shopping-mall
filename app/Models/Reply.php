@@ -24,4 +24,8 @@ class Reply extends Model
         return $this->belongsTo(Order::class);
     }
 
+    public function goods() {
+        return $this->belongsTo(Good::class, "goods_id", "id", "right");
+    }
+
 }
