@@ -196,12 +196,12 @@ class OrderController extends AdminController
         $form->datetime('paid_at', __('支付时间'))->disable();
         $form->text('payment_method', __('支付方式'))->disable();
 //        $form->text('payment_no', __('流水号'))->disable();
-        $form->text('refund_status', __('退款退货状态'))->default('refund_pending');
+        $form->text('refund_status', __('退款退货状态'))->default('pending');
         $form->text('refund_no', __('退款退货单号'));
         $form->switch('closed', __('是否关闭'));
 //        $form->switch('reply_status', __('是否已评价'))->disable();
 //        $form->switch('cancel', __('是否取消'))->disable();
-        $form->text('ship_status', __('物流状态'))->default('ship_pending');
+        $form->text('ship_status', __('物流状态'))->default('pending');
         $form->textarea('ship_data', __('物流信息'));
         $form->textarea('extra', __('其他数据'));
 
