@@ -55,4 +55,22 @@ class Good extends Model
         }
         $this->increment('stock', $amount);
     }
+
+    public function getHotAttribute()
+    {
+        if ($this->on_hot == 1) {
+            return '是';
+        } else {
+            return '否';
+        }
+    }
+
+    public function getSaleAttribute()
+    {
+        if ($this->on_sale == 1) {
+            return '是';
+        } else {
+            return '否';
+        }
+    }
 }

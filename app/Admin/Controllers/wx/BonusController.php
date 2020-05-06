@@ -6,7 +6,7 @@ use App\Admin\Extensions\BonusExcleExpoter;
 use App\Admin\Extensions\BonusFlush;
 use App\Admin\Extensions\CommissionInfoList;
 use App\Admin\Extensions\ModelList;
-use App\Models\Bounse;
+use App\Models\Bonus;
 use App\Models\User;
 use App\Models\UserInfo;
 use Encore\Admin\Controllers\AdminController;
@@ -35,7 +35,7 @@ class BonusController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Bounse());
+        $grid = new Grid(new Bonus());
         $grid->model()->join('users', 'user_id', '=', 'users.id')->join('user_infos', 'users.id', '=', 'user_infos.user_id', 'left')->groupByRaw('left(bounses.created_at,7),bounses.user_id,user_infos.type')->selectRaw('users.id,name,phone,left(bounses.created_at,7) as year_month1,user_infos.type as user_type,sum(bonus) as bonus')->orderByRaw('year_month1 desc,id desc');
 
         $grid->column('id', __('Id'));
@@ -80,7 +80,7 @@ class BonusController extends AdminController
         $start_month = $year_month . "-01 00:00:00";
         $end_month = date('Y-m-d H:i:s', strtotime('+1 month', strtotime($start_month)));
         $total_info = ['start_time' => $start_month, 'end_time' => $end_month];
-        $bonuses = Bounse::query()->with("order")->where('user_id', $id)
+        $bonuses = Bonus::query()->with("order")->where('user_id', $id)
             ->whereBetween('created_at', [$start_month, $end_month])->get();
         $total_info['total_count'] = $bonuses->count();
         $total_info['total_account'] = $bonuses->sum('bonus');
@@ -93,7 +93,7 @@ class BonusController extends AdminController
 
     protected function infoGrid($user_id, $year_month)
     {
-        $grid = new Grid(new Bounse());
+        $grid = new Grid(new Bonus());
         $start_month = $year_month . "-01 00:00:00";
         $end_month = date('Y-m-d H:i:s', strtotime('+1 month', strtotime($start_month)));
         $grid->model()->with("order")->where('user_id', $user_id)
@@ -125,7 +125,7 @@ class BonusController extends AdminController
      */
     protected function detail($id)
     {
-        $bonus_collect = Bounse::query()->join('users', 'user_id', '=', 'users.id', 'left')->join('orders', 'order_id', '=', 'orders.id', 'left')->where('user_id', $id)->select([
+        $bonus_collect = Bonus::query()->join('users', 'user_id', '=', 'users.id', 'left')->join('orders', 'order_id', '=', 'orders.id', 'left')->where('user_id', $id)->select([
             'bonuses.id',
             'name',
             'bonus',
@@ -156,7 +156,7 @@ class BonusController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new Bounse());
+        $form = new Form(new Bonus());
 
         $form->number('user_id', __('User id'));
         $form->number('order_id', __('Order id'));
@@ -174,7 +174,7 @@ class BonusController extends AdminController
             'year_month' => 'required',
         ]);
 
-        $result = Bounse::query()->where('user_id', $data['user_id'])->where(DB::raw("left(created_at, 7)"), $data['year_month'])->update(['bonus' => 0]);
+        $result = Bonus::query()->where('user_id', $data['user_id'])->where(DB::raw("left(created_at, 7)"), $data['year_month'])->update(['bonus' => 0]);
         return redirect()->back();
     }
 }
