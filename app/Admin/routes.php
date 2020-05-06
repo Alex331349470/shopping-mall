@@ -12,36 +12,35 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
-    $router->get('users', 'UsersController@index');
-
-    $router->get('goods','GoodsController@index');
-    $router->get('goods/create', 'GoodsController@create');
-    $router->post('goods','GoodsController@store');
-    $router->get('goods/{id}/edit','GoodsController@edit');
-    $router->put('goods/{id}','GoodsController@update');
-
-    $router->get('ads','AdsController@index');
-    $router->get('ads/create','AdsController@create');
-    $router->post('ads','AdsController@store');
-    $router->get('ads/{id}/edit', 'AdsController@edit');
-    $router->put('ads/{id}', 'AdsController@update');
-
-    $router->get('bonuses','BonusesController@index');
-    $router->get('bonuses/create','BonusesController@create');
-    $router->post('bonuses','BonusesController@store');
-    $router->get('bonuses/{id}/edit', 'BonusesController@edit');
-    $router->put('bonuses/{id}', 'BonusesController@update');
-
-    $router->get('categories','CategoriesController@index');
-    $router->get('categories/create','CategoriesController@create');
-    $router->post('categories','CategoriesController@store');
-    $router->get('categories/{id}/edit', 'CategoriesController@edit');
-    $router->put('categories/{id}', 'CategoriesController@update');
-
-    $router->get('orders', 'OrdersController@index')->name('admin.orders.index');
-    $router->get('orders/{order}', 'OrdersController@show')->name('admin.orders.show');
-    $router->post('orders/{order}/ship', 'OrdersController@ship')->name('admin.orders.ship');
-    $router->get('orders/{order}/edit', 'OrdersController@edit')->name('admin.orders.edit');
-    $router->put('orders/{order}', 'OrdersController@update')->name('admin.orders.update');
+    // 会员管理
+    $router->resource('wx/users', wx\UserController::class);
+    // 等级设置
+    $router->resource('wx/levels', wx\UserInfoController::class);
+    // 绩效管理
+    $router->resource('wx/commission', wx\BonusController::class);
+    $router->post('wx/commission/flush', 'wx\BonusController@flush')->name('commission.flush');
+    $router->get('commissions/{commission}/{month}', 'wx\BonusController@infoList')->name('commission.info.list');
+    // 订单管理
+    $router->resource('wx/orders', wx\OrderController::class);
+    $router->get('orders/{order}', 'wx\OrderController@infoList')->name('order.info.list');
+    $router->post('orders/{order}/ship', 'wx\OrderController@ship')->name('admin.orders.ship');
+    // 商品管理
+    // 商品
+    $router->resource('wx/goods', wx\GoodsController::class);
+    // 图集
+    $router->get('goods/{goods}/images', 'wx\GoodsController@imageList')->name('images.index');
+    $router->get('goods/{goods}/images/create', 'wx\GoodsController@createImg')->name('images.create');
+    $router->post('goods/{goods}/images', 'wx\GoodsController@storeImg')->name('images.store');
+    $router->get('goods/{goods}/images/{image}/edit', 'wx\GoodsController@editImg')->name('images.edit');
+    $router->put('goods/{goods}/images/{image}', 'wx\GoodsController@updateImg')->name('images.update');
+    $router->delete('wx/images/{image}', 'wx\GoodsController@destroyImg')->name('images.destroy');
+    // 分类
+    $router->resource('wx/categories', wx\CategoryController::class);
+    // 销售属性
+    $router->resource('specifications', wx\SpecController::class);
+    // 广告管理
+    $router->resource('wx/advertises', wx\AdController::class);
+    // 评论管理
+    $router->resource('wx/reply', wx\ReplyController::class);
 
 });
