@@ -42,6 +42,7 @@ return array(
     'App\\Http\\Controllers\\Api\\PaymentsController' => $baseDir . '/app/Http/Controllers/Api/PaymentsController.php',
     'App\\Http\\Controllers\\Api\\RepliesController' => $baseDir . '/app/Http/Controllers/Api/RepliesController.php',
     'App\\Http\\Controllers\\Api\\ReplyImagesController' => $baseDir . '/app/Http/Controllers/Api/ReplyImagesController.php',
+    'App\\Http\\Controllers\\Api\\TestsController' => $baseDir . '/app/Http/Controllers/Api/TestsController.php',
     'App\\Http\\Controllers\\Api\\UserAddressesController' => $baseDir . '/app/Http/Controllers/Api/UserAddressesController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

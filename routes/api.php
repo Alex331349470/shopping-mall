@@ -17,6 +17,8 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
     Route::get('version',function (){
         return 'this is version 1';
     });
+
+    Route::get('status', 'TestsController@show');
     Route::middleware('throttle:'.config('api.rate_limits.sign'))
         ->group(function (){
             //小程序注册以及登录
