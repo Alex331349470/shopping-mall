@@ -220,8 +220,14 @@ class OrderController extends AdminController
         }
         // 是否同意退款
         if ($request->input('agree')) {
-            // 同意退款的逻辑这里先留空
-            // todo
+            // 清空拒绝退款理由
+            $extra = $order->extra ?: [];
+            unset($extra['refund_disagree_reason']);
+            $order->update([
+                'extra' => $extra,
+            ]);
+            // 调用退款逻辑
+            $this->_refundOrder($order);
         } else {
             // 将拒绝退款理由放到订单的 extra 字段中
             $extra = $order->extra ?: [];
