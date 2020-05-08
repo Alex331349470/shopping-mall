@@ -19,6 +19,10 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
     });
 
     Route::get('status', 'TestsController@show');
+
+    Route::get('client/service', 'ServicesController@service')
+        ->name('client.service');
+
     Route::middleware('throttle:'.config('api.rate_limits.sign'))
         ->group(function (){
             //小程序注册以及登录
