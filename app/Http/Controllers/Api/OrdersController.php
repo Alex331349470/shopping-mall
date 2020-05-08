@@ -18,7 +18,7 @@ class OrdersController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::where('user_id', $request->user()->id)->with('user', 'items.good.images','items.good.category')->orderBy('created_at', 'desc')->get();
+        $orders = Order::where('user_id', $request->user()->id)->with('user', 'items.good.images', 'items.good.category')->orderBy('created_at', 'desc')->get();
 
 
         OrderResource::wrap('data');
@@ -28,7 +28,7 @@ class OrdersController extends Controller
 
     public function replyIndex(Request $request)
     {
-        $orders = Order::where('user_id',$request->user()->id)->with('user','items.good.images')->orderBy('created_at','desc')->get();
+        $orders = Order::where('user_id', $request->user()->id)->with('user', 'items.good.images')->orderBy('created_at', 'desc')->get();
 
         OrderResource::wrap('data');
         return new OrderResource($orders);
@@ -36,7 +36,7 @@ class OrdersController extends Controller
 
     public function show(Order $order)
     {
-        $order = $order->with('user','items.good.images','items.good.category')->whereId($order->id)->first();
+        $order = $order->with('user', 'items.good.images', 'items.good.category')->whereId($order->id)->first();
         return new OrderResource($order);
     }
 
@@ -93,17 +93,21 @@ class OrdersController extends Controller
                 $totalWeight += $good->weight * $amount;
 
                 if ($good->decreaseStock($amount) <= 0) {
-                    abort(403,'该商品库存不足');
+                    abort(403, '该商品库存不足');
                 }
             }
 
             if ($totalAmount >= 88) {
                 $order->update(['ship_price' => 0]);
-            } else if ($totalAmount <88 ) {
+            } else if ($totalAmount < 88 && $totalWeight <= 5) {
                 $order->update(['ship_price' => 6]);
                 $totalAmount += 6;
+            } else if ($totalAmount < 88 && $totalWeight > 5) {
+                $ship_price = $totalWeight + 1;
+                $order->update(['ship_price' => $ship_price]);
+                $totalAmount += $ship_price;
             }
-            
+
             if ($request->coupon_id) {
                 $coupon = Coupon::query()->where('id', $request->coupon_id)->first();
                 $totalAmount -= $coupon->coupon;
@@ -135,7 +139,7 @@ class OrdersController extends Controller
                 $query->where('no', 'like', $like);
             });
 
-            $orders = $builder->with('user','items.good.images','items.good.category')->paginate(9);
+            $orders = $builder->with('user', 'items.good.images', 'items.good.category')->paginate(9);
 
             return new OrderResource($orders);
         }
@@ -143,7 +147,7 @@ class OrdersController extends Controller
 
     public function received(OrderReceiveReuqest $request)
     {
-        $order = Order::query()->where('no',$request->no)->first();
+        $order = Order::query()->where('no', $request->no)->first();
 
         $order->ship_status = Order::SHIP_STATUS_RECEIVED;
         $order->save();
@@ -195,15 +199,15 @@ class OrdersController extends Controller
     {
         $user_id = $request->user()->id;
         if ($order->user_id !== $user_id) {
-            abort(403,'该订单不是当前用户订单');
+            abort(403, '该订单不是当前用户订单');
         }
 
         if (!$order->paid_at) {
-            abort(403,'该订单未支付，不可退款');
+            abort(403, '该订单未支付，不可退款');
         }
 
         if ($order->refund_data == Order::REFUND_STATUS_APPLIED) {
-            abort(403,'该订单已经申请过退款，请勿重复操作');
+            abort(403, '该订单已经申请过退款，请勿重复操作');
         }
 
         $extra = $order->extra ?: [];
