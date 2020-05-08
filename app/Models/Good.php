@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Good extends Model
 {
     protected $fillable = [
-        'title','description', 'on_hot', 'on_sale','content','express_price','price', 'rating',
+        'title','description', 'on_hot', 'on_sale','content','express_price','price', 'rating','weight',
         'category_id','good_no', 'stock','sold_count', 'review_count'
         ];
 

@@ -47,6 +47,7 @@ class Order extends Model
         'user_type',
         'bonus',
         'closed',
+        'ship_price',
         'reviewed',
         'ship_status',
         'ship_data',
