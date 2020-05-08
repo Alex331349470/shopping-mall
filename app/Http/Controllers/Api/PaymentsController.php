@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
-use Endroid\QrCode\QrCode;
 use Illuminate\Http\Request;
 
 class PaymentsController extends Controller
