@@ -8,10 +8,10 @@ use Wythe\Logistics\Logistics;
 
 class TestsController extends Controller
 {
-    public function show()
+    public function show(Logistics $logistics)
     {
-        $logistics = new Logistics();
-        $logistics->query('12313131231', 'kuaidibird');
-        return $logistics;
+        dd($logistics->query('12312312412','kuaidibird'));
+
+
     }
 }

@@ -24,7 +24,7 @@ namespace Wythe\Logistics;
 class Config
 {
     private $config = [
-        'kuaidibird' => ['app_key' => '229ede62-853a-41bb-abf0-a1e9376ff831', 'app_secret' => '1639610', 'vip' => false], // 免费套餐 3000 次
+        'kuaidibird' => ['app_key' => 'e702814c-64a3-4efc-b85c-b341135d311a', 'app_secret' => 'test1639610', 'vip' => false], // 免费套餐 3000 次
     ];
 
     /**

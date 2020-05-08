@@ -755,6 +755,7 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'App\\Http\\Controllers\\Api\\PaymentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/PaymentsController.php',
         'App\\Http\\Controllers\\Api\\RepliesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/RepliesController.php',
         'App\\Http\\Controllers\\Api\\ReplyImagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ReplyImagesController.php',
+        'App\\Http\\Controllers\\Api\\ServicesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ServicesController.php',
         'App\\Http\\Controllers\\Api\\TestsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/TestsController.php',
         'App\\Http\\Controllers\\Api\\UserAddressesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserAddressesController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
