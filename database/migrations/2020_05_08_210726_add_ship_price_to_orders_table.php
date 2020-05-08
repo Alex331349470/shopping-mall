@@ -14,7 +14,7 @@ class AddShipPriceToOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->decimal('ship_price')->after('address');
+            $table->decimal('ship_price')->default(0)->after('address');
         });
     }
 
