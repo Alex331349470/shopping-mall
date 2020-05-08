@@ -94,6 +94,7 @@ class GoodsController extends AdminController
         $show->field('content', __('Content'));
         $show->field('express_price', __('Express price'));
         $show->field('price', __('Price'));
+        $show->field('weight',__('Weight'));
         $show->field('rating', __('Rating'));
         $show->field('category_id', __('Category id'));
         $show->field('good_no', __('Good no'));
