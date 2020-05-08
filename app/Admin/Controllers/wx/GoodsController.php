@@ -55,6 +55,7 @@ class GoodsController extends AdminController
         $grid->column('price', __('售价'));
         $grid->column('rating', __('评分'));
         $grid->column('category.name', __('分类名称'));
+        $grid->column('weight',__('重量(KG)'));
         $grid->column('good_no', __('商品货号'));
         $grid->column('stock', __('库存'));
         $grid->column('sold_count', __('销量'));
@@ -128,6 +129,7 @@ class GoodsController extends AdminController
         $rules = ['min:0'];
         $form->decimal('express_price', __('市场价'))->attribute('min', '0.0')->default(0.00)->rules($rules);
         $form->decimal('price', __('售价'))->attribute('min', '0.0')->default(0.00)->help('建议售价比市场价低')->required()->rules($rules);
+        $form->decimal('weight',__('重量(KG)'))->default(0.00);
         $form->decimal('rating', __('评分'))->attribute('min', '0.0')->default(5.00)->rules($rules);
 
         $category_lv1 = Category::query()->get(['id', 'name'])->pluck('name', 'id');
