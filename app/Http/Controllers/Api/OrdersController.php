@@ -65,6 +65,7 @@ class OrdersController extends Controller
             // 写入数据库
             $order->save();
             $totalAmount = 0;
+            $totalWeight = 0.00;
             foreach ($good_ids as $good_id) {
                 if (!$good = Good::find($good_id)) {
                     abort(403, '不存在ID为' . $good_id . '的商品');
@@ -89,11 +90,20 @@ class OrdersController extends Controller
 
                 $item->save();
                 $totalAmount += $good->price * $amount;
+                $totalWeight += $good->weight * $amount;
+
                 if ($good->decreaseStock($amount) <= 0) {
                     abort(403,'该商品库存不足');
                 }
             }
 
+            if ($totalAmount >= 88) {
+                $order->update(['ship_price' => 0]);
+            } else if ($totalAmount <88 ) {
+                $order->update(['ship_price' => 6]);
+                $totalAmount += 6;
+            }
+            
             if ($request->coupon_id) {
                 $coupon = Coupon::query()->where('id', $request->coupon_id)->first();
                 $totalAmount -= $coupon->coupon;
