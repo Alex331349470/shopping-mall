@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Wythe\Logistics\Logistics;
 
 class TestsController extends Controller
 {
     public function show()
     {
-        $status = Order::$shipStatusMap['pending'];
-        dd(Order::SHIP_STATUS_NOTICE);
+        $logistics = new Logistics();
+        $logistics->query('12313131231', 'kuaidibird');
+        return $logistics;
     }
 }

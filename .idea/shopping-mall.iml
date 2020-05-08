@@ -130,6 +130,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tymon/jwt-auth" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wythe/logistics" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yansongda/pay" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yansongda/supports" />
     </content>

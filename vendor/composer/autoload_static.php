@@ -108,6 +108,7 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         ),
         'W' => 
         array (
+            'Wythe\\Logistics\\' => 16,
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
@@ -279,6 +280,10 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Wythe\\Logistics\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wythe/logistics/src',
         ),
         'Whoops\\' => 
         array (
@@ -769,6 +774,7 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\Admin\\HandleRefundRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/HandleRefundRequest.php',
         'App\\Http\\Requests\\Api\\AddCartRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Api/AddCartRequest.php',
         'App\\Http\\Requests\\Api\\ApplyRefundRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Api/ApplyRefundRequest.php',
         'App\\Http\\Requests\\Api\\AuthCaptchaReuqest' => __DIR__ . '/../..' . '/app/Http/Requests/Api/AuthCaptchaReuqest.php',
@@ -7201,6 +7207,22 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'Wythe\\Logistics\\Channel\\Channel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/Channel.php',
+        'Wythe\\Logistics\\Channel\\IckdChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/IckdChannel.php',
+        'Wythe\\Logistics\\Channel\\JiSuChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/JiSuChannel.php',
+        'Wythe\\Logistics\\Channel\\JuHeChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/JuHeChannel.php',
+        'Wythe\\Logistics\\Channel\\KuaiDi100Channel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/KuaiDi100Channel.php',
+        'Wythe\\Logistics\\Channel\\KuaiDiBirdChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/KuaiDiBirdChannel.php',
+        'Wythe\\Logistics\\Channel\\ShuJuZhiHuiChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/ShuJuZhiHuiChannel.php',
+        'Wythe\\Logistics\\Config' => __DIR__ . '/..' . '/wythe/logistics/src/Config.php',
+        'Wythe\\Logistics\\Exceptions\\Exception' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/Exception.php',
+        'Wythe\\Logistics\\Exceptions\\HttpException' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/HttpException.php',
+        'Wythe\\Logistics\\Exceptions\\InvalidArgumentException' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/InvalidArgumentException.php',
+        'Wythe\\Logistics\\Exceptions\\NoQueryAvailableException' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/NoQueryAvailableException.php',
+        'Wythe\\Logistics\\Factory' => __DIR__ . '/..' . '/wythe/logistics/src/Factory.php',
+        'Wythe\\Logistics\\Logistics' => __DIR__ . '/..' . '/wythe/logistics/src/Logistics.php',
+        'Wythe\\Logistics\\SupportLogistics' => __DIR__ . '/..' . '/wythe/logistics/src/SupportLogistics.php',
+        'Wythe\\Logistics\\Traits\\HttpRequest' => __DIR__ . '/..' . '/wythe/logistics/src/Traits/HttpRequest.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'Yansongda\\Pay\\Contracts\\GatewayApplicationInterface' => __DIR__ . '/..' . '/yansongda/pay/src/Contracts/GatewayApplicationInterface.php',
         'Yansongda\\Pay\\Contracts\\GatewayInterface' => __DIR__ . '/..' . '/yansongda/pay/src/Contracts/GatewayInterface.php',
