@@ -10,8 +10,9 @@ class TestsController extends Controller
 {
     public function show(Logistics $logistics)
     {
-        dd($logistics->query('12312312412','kuaidibird'));
+        $message = $logistics->query('1231234123','','ZTO');
 
+        dd($message);
 
     }
 }
