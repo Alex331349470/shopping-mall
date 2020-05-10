@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shopping-mall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopping-mall.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/Channel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/IckdChannel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/JiSuChannel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/JuHeChannel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/KuaiDi100Channel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/KuaiDiBirdChannel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Channel/ShuJuZhiHuiChannel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Exceptions/Exception.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Exceptions/HttpException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Exceptions/InvalidArgumentException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Exceptions/NoQueryAvailableException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Factory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Logistics.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/SupportLogistics.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Traits/HttpRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +277,7 @@
       <workItem from="1589096050964" duration="3207000" />
       <workItem from="1589100451272" duration="941000" />
       <workItem from="1589101491483" duration="1607000" />
-      <workItem from="1589109726470" duration="3060000" />
+      <workItem from="1589109726470" duration="4097000" />
     </task>
     <servers />
   </component>
