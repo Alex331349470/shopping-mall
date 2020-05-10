@@ -48,7 +48,7 @@
             </tr>
             <!-- 订单发货开始 -->
             <!-- 如果订单未发货，展示发货表单 -->
-            @if($order->ship_status === \App\Models\Order::SHIP_STATUS_PENDING)
+            @if($order->ship_status === \App\Models\Order::SHIP_STATUS_PENDING || $order->ship_status === \App\Models\Order::SHIP_STATUS_NOTICE)
                 <tr>
                     <td colspan="4">
                         <form action="{{ route('admin.orders.ship', [$order->id]) }}" method="post" class="form-inline">
