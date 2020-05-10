@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/wythe/logistics/src/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/wythe/logistics/src/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AcceptHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AcceptHeader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -176,16 +177,16 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ice_hot\Desktop\code\php\shop5" />
+      <recent name="C:\Users\ice_hot\Desktop\code\php\shop5\app\Http\Controllers" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/public/vendor/laravel-admin" />
       <recent name="$PROJECT_DIR$/public/vendor" />
-      <recent name="$PROJECT_DIR$/resources/views/vendor" />
-      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Admin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,6 +275,7 @@
       <workItem from="1588928441564" duration="2158000" />
       <workItem from="1588939280010" duration="18157000" />
       <workItem from="1588986601090" duration="877000" />
+      <workItem from="1589079692569" duration="3875000" />
     </task>
     <servers />
   </component>

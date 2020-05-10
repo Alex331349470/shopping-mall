@@ -11,3 +11,8 @@ Route::get('payment/alipay/return', 'ReturnsController@alipayReturn')
 
 Route::post('payment/wechat/refund_notify', 'ReturnsController@wechatRefundNotify')
     ->name('payment.wechat.refund_notify');
+
+Route::prefix("contact")->namespace("Contact")->group(function ($route) {
+    //服务器验证
+    $route->get("validate/token", "HostValidateTokenController@checkWXGetToken");
+});
