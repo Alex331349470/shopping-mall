@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/wx/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/wx/OrderController.php" afterDir="false" />
-    </list>
+    <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,11 +177,11 @@
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Admin/Extensions" />
       <recent name="$PROJECT_DIR$/app/Admin/Controllers/wx" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/admin/orders" />
       <recent name="C:\Users\ice_hot\Desktop\code\php\shop5" />
-      <recent name="C:\Users\ice_hot\Desktop\code\php\shop5\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -277,7 +274,7 @@
       <workItem from="1589096050964" duration="3207000" />
       <workItem from="1589100451272" duration="941000" />
       <workItem from="1589101491483" duration="1607000" />
-      <workItem from="1589109726470" duration="10680000" />
+      <workItem from="1589109726470" duration="10933000" />
     </task>
     <servers />
   </component>
