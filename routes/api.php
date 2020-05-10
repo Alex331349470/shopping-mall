@@ -18,7 +18,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
         return 'this is version 1';
     });
 
-    Route::get('status', 'TestsController@show');
+    Route::post('status', 'TestsController@show');
 
     Route::get('client/service', 'ServicesController@service')
         ->name('client.service');

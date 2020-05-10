@@ -1705,6 +1705,61 @@
         ]
     },
     {
+        "name": "finecho/logistics",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/finecho/logistics.git",
+            "reference": "4d63b713c9ecf134aebdde8d0241a5aa49c07261"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/finecho/logistics/zipball/4d63b713c9ecf134aebdde8d0241a5aa49c07261",
+            "reference": "4d63b713c9ecf134aebdde8d0241a5aa49c07261",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "guzzlehttp/guzzle": "^6.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "^1.2",
+            "phpunit/phpunit": "~5"
+        },
+        "time": "2019-09-04T15:11:57+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Finecho\\Logistics\\ServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Finecho\\Logistics\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "finecho",
+                "email": "liuhao25@foxmail.com"
+            }
+        ],
+        "description": "A logistics SDK."
+    },
+    {
         "name": "fzaninotto/faker",
         "version": "v1.9.1",
         "version_normalized": "1.9.1.0",
@@ -8784,54 +8839,6 @@
             "check",
             "validate"
         ]
-    },
-    {
-        "name": "wythe/logistics",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/uuk020/logistics.git",
-            "reference": "d1705d316e77f6c88a8361349f48145238b298f2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/uuk020/logistics/zipball/d1705d316e77f6c88a8361349f48145238b298f2",
-            "reference": "d1705d316e77f6c88a8361349f48145238b298f2",
-            "shasum": "",
-            "mirrors": [
-                {
-                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                    "preferred": true
-                }
-            ]
-        },
-        "require": {
-            "php": ">=7.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "^1.2",
-            "phpunit/phpunit": "~6"
-        },
-        "time": "2019-06-29T15:20:34+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Wythe\\Logistics\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "wythe",
-                "email": "wythe.huangw@gmail.com"
-            }
-        ],
-        "description": "查询快递物流信息"
     },
     {
         "name": "yansongda/pay",

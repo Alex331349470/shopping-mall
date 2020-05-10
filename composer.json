@@ -12,6 +12,7 @@
         "codingyu/ueditor": "^3.0",
         "encore/laravel-admin": "1.7.7",
         "fideloper/proxy": "^4.0",
+        "finecho/logistics": "^3.0",
         "guzzlehttp/guzzle": "~6.3",
         "intervention/image": "^2.5",
         "jxlwqq/quill": "^1.0",
@@ -21,7 +22,6 @@
         "overtrue/laravel-wechat": "~5.0",
         "predis/predis": "~1.1",
         "tymon/jwt-auth": "1.0.0-rc.5",
-        "wythe/logistics": "^1.0",
         "yansongda/pay": "^2.9"
     },
     "require-dev": {
