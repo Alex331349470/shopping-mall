@@ -18,9 +18,9 @@ class HostValidateTokenController extends Controller{
         $tmpStr = sha1( $tmpStr );
 
         if ($tmpStr == $signature ) {
-            return true;
+            return $tmpStr;
         } else {
-            return false;
+            return "";
         }
     }
 
