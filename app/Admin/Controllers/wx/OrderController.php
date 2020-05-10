@@ -73,7 +73,22 @@ class OrderController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('no', __('订单编号'));
         $grid->column('user.name', __('用户名'));
-        $grid->column('address', __('地址'));
+        $grid->column('address', __('地址'))->display(function ($value) {
+            $address = '';
+            if (isset($value['address'])) {
+                $address .= '地址：' . mb_convert_encoding($value['address'], 'UTF8');
+            }
+            if (isset($value['zip'])) {
+                $address .= ' 邮编：' . $value['zip'];
+            }
+            if (isset($value['contact_name'])) {
+                $address .= ' 联系人：' . mb_convert_encoding($value['contact_name'], 'UTF8');
+            }
+            if (isset($value['contact_phone'])) {
+                $address .= ' 电话：' . mb_convert_encoding($value['contact_phone'], 'UTF8');
+            }
+            return $address;
+        });
         $grid->column('total_amount', __('总价'));
         $grid->column('remark', __('备注'));
         $grid->column('paid_at', __('支付时间'));
@@ -83,13 +98,28 @@ class OrderController extends AdminController
             return isset(Order::$refundStatusMap[$value])?Order::$refundStatusMap[$value]:$value;
         });
         $grid->column('refund_no', __('退款退货单号'));
-        $grid->column('closed', __('是否关闭'));
-        $grid->column('reply_status', __('是否评价'));
-        $grid->column('cancel', __('是否取消'));
+        $grid->column('closed', __('是否关闭'))->display(function ($value) {
+            return $value == 0?'否':'是';
+        });
+        $grid->column('reply_status', __('是否评价'))->display(function ($value) {
+            return $value == 0?'否':'是';
+        });
+        $grid->column('cancel', __('是否取消'))->display(function ($value) {
+            return $value == 0?'否':'是';
+        });
         $grid->column('ship_status', __('物流状态'))->display(function ($value) {
             return isset(Order::$shipStatusMap[$value])?Order::$shipStatusMap[$value]:$value;
-        });;
-        $grid->column('ship_data', __('物流信息'));
+        });
+        $grid->column('ship_data', __('物流信息'))->display(function ($value) {
+            $ship_data = '';
+            if (isset($order->ship_data['express_company'])) {
+                $ship_data .= '物流公司：' . $value['express_company'];
+            }
+            if (isset($order->ship_data['express_no'])) {
+                $ship_data .= ' 订单编号：' . $value['express_no'];
+            }
+            return $ship_data;
+        });
 //        $grid->column('extra', __('其他数据'))->display(function ($value) {
 //            if ($value->reason) {
 //                return "申请退款：" . $value->reason;
