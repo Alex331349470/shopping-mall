@@ -151,10 +151,10 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 Route::get('orders/{order}','OrdersController@show')
                     ->name('orders.show');
                 //单个订单回复信息
-                Route::patch('orders/{order}/reply','OrdersController@replied')
+                Route::put('orders/{order}/reply','OrdersController@replied')
                     ->name('order.reply');
                 //取消单个订单
-                Route::patch('orders/{order}/cancel','OrdersController@cancelled')
+                Route::put('orders/{order}/cancel','OrdersController@cancelled')
                     ->name('order.cancel');
                 //确认收货
                 Route::put('orders/{order}','OrdersController@received')

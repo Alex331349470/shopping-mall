@@ -36,25 +36,36 @@ class OrderController extends AdminController
         $grid = new Grid(new Order());
         $type = request()->get("type");
         switch ($type) {
-            case 2:
+            case 2: // 待发货
                 $grid->model()->whereNotNull('paid_at')
                     ->where('ship_status', Order::SHIP_STATUS_PENDING)
                     ->where('refund_status', Order::REFUND_STATUS_PENDING);
                 break;
-            case 3:
+            case 3: // 退款申请
                 $grid->model()->where('refund_status', Order::REFUND_STATUS_APPLIED);
                 break;
-            case 4:
+            case 4: // 完成订单
                 $grid->model()->where('ship_status', Order::SHIP_STATUS_RECEIVED);
+                break;
+            case 5: // 提醒发货
+                $grid->model()->where('ship_status', Order::SHIP_STATUS_NOTICE);
                 break;
             default:
         }
 
         $grid->header(function ($query) {
             $info = [];
+
             $info['total_finished'] = Order::getFinishWhere()->count("id");
-            $info['total_unship'] = Order::getUnShipWhere()->count("id");             $info['total_unrefund'] = Order::getUnRefundWhere()->count("id");
+
+            $info['total_unship'] = Order::getUnShipWhere()->count("id");
+
+            $info['total_unrefund'] = Order::getUnRefundWhere()->count("id");
+
             $info['total_all'] = Order::query()->count("id");
+
+            $info['total_notify'] = Order::getNotifyShipWhere()->count("id");
+
             $doughnut = view('admin.orders.header', compact('info'));
             return new Box('订单状态展示', $doughnut);
         });
@@ -152,7 +163,7 @@ class OrderController extends AdminController
             abort(403,'该订单未付款');
         }
         // 判断当前订单发货状态是否为未发货
-        if ($order->ship_status === Order::SHIP_STATUS_DELIVERED) {
+        if ($order->ship_status == Order::SHIP_STATUS_DELIVERED) {
             abort(403,'该订单已发货');
         }
         // Laravel 5.5 之后 validate 方法可以返回校验过的值
