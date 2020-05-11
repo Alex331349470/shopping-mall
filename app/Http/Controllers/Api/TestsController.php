@@ -86,4 +86,12 @@ class TestsController extends Controller
     protected function encrypt($data, $appkey) {
         return urlencode(base64_encode(md5($data.$appkey)));
     }
+
+    public function qrcode(Request $request)
+    {
+        $miniProgram = \EasyWeChat::miniProgram();
+        $response = $miniProgram->app_code($request->input('path'));
+
+        return $response;
+    }
 }
