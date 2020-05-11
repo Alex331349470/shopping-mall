@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Finecho\Logistics\Logistics;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 
@@ -87,11 +88,22 @@ class TestsController extends Controller
         return urlencode(base64_encode(md5($data.$appkey)));
     }
 
-    public function qrcode(Request $request)
+    public function qrcode(Request $request, Client $client)
     {
-        $miniProgram = \EasyWeChat::miniProgram();
-        $response = $miniProgram->app_code($request->input('path'));
+        $response1 = $client->get('https://api.weixin.qq.com/cgi-bin/token',[
+            'query' => [
+                'grant_type' => 'client_credential',
+                'appid' => env('WECHAT_MINI_PROGRAM_APPID'),
+                'secret' => env('WECHAT_MINI_PROGRAM_SECRET')
+            ]
+        ]);
 
-        return $response;
+        $response2 = $client->post('https://api.weixin.qq.com/wxa/getwxacode?access_token='.$response1->access_token,[
+            'query' => [
+                'path' => $request->input('path'),
+            ]
+        ]);
+
+        return $response2;
     }
 }
