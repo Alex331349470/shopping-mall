@@ -88,22 +88,11 @@ class TestsController extends Controller
         return urlencode(base64_encode(md5($data.$appkey)));
     }
 
-    public function qrcode(Request $request, Client $client)
+    public function qrcode(Request $request)
     {
-        $response1 = $client->get('https://api.weixin.qq.com/cgi-bin/token',[
-            'query' => [
-                'grant_type' => 'client_credential',
-                'appid' => env('WECHAT_MINI_PROGRAM_APPID'),
-                'secret' => env('WECHAT_MINI_PROGRAM_SECRET')
-            ]
-        ]);
+        $miniProgram = \EasyWeChat::miniProgram();
+        $response = $miniProgram->app_code->get($request->input('path'));
 
-        $response2 = $client->post('https://api.weixin.qq.com/wxa/getwxacode?access_token='.$response1->access_token,[
-            'query' => [
-                'path' => $request->input('path'),
-            ]
-        ]);
-
-        return $response2;
+        return $response;
     }
 }
