@@ -92,7 +92,7 @@ class TestsController extends Controller
     {
         $miniProgram = \EasyWeChat::miniProgram();
         $response = $miniProgram->app_code->get($request->input('path'));
-
-        return $response;
+        $img = base64_encode($response);
+        return $img;
     }
 }
