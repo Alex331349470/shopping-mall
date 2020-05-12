@@ -66,6 +66,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             //获取单个商品评论图片
             Route::get('goods/{good}/reply_images'.'GoodsController@replyImageIndex')
                 ->name('replies.images.index');
+            
+            Route::get('goods/{good}/skus','GoodsController@skus')
+                ->name('goods.skus');
             //获取单个商品评论
             Route::get('goods/{good}/replies','GoodsController@replyIndex')
                 ->name('good.replies');
@@ -106,8 +109,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 Route::get('goods/{good}/favorite/status','GoodsController@favoriteStatus')
                     ->name('goods.favorite.status');
 
-                Route::get('goods/{good}/skus','GoodsController@skus')
-                    ->name('goods.skus');
+
                 //用户收藏商品列表
                 Route::get('goods/favorites','GoodsController@favorites')
                     ->name('goods.favorites');
