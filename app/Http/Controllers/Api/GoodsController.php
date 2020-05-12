@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\GoodResource;
+use App\Http\Resources\GoodSkuResource;
 use App\Http\Resources\ReplyImageResource;
 use App\Http\Resources\ReplyResource;
 use App\Models\Good;
+use App\Models\GoodSku;
 use App\Models\Reply;
 use Illuminate\Http\Request;
 
@@ -70,6 +72,13 @@ class GoodsController extends Controller
         $user->favoriteGoods()->attach($good);
 
         return response(null,201);
+    }
+
+    public function skus(Good $good)
+    {
+        $skus = GoodSku::query()->where('good_id',$good->id)->get();
+        GoodSkuResource::wrap('data');
+        return new GoodSkuResource($skus);
     }
 
     public function disfavor(Good $good,Request $request)

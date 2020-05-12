@@ -105,6 +105,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 //商品收藏状态
                 Route::get('goods/{good}/favorite/status','GoodsController@favoriteStatus')
                     ->name('goods.favorite.status');
+
+                Route::get('goods/{good}/skus','GoodsController@skus')
+                    ->name('goods.skus');
                 //用户收藏商品列表
                 Route::get('goods/favorites','GoodsController@favorites')
                     ->name('goods.favorites');
