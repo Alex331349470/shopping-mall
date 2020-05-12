@@ -66,7 +66,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             //获取单个商品评论图片
             Route::get('goods/{good}/reply_images'.'GoodsController@replyImageIndex')
                 ->name('replies.images.index');
-            
+
             Route::get('goods/{good}/skus','GoodsController@skus')
                 ->name('goods.skus');
             //获取单个商品评论
