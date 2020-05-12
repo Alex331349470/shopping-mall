@@ -9,6 +9,7 @@ use App\Http\Resources\OrderResource;
 use App\Jobs\CloseOrder;
 use App\Models\Coupon;
 use App\Models\Good;
+use App\Models\GoodSku;
 use App\Models\UserAddress;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -92,22 +93,29 @@ class OrdersController extends Controller
                 $totalAmount += $good->price * $amount;
                 $totalWeight += $good->weight * $amount;
 
+//                if ($sku_id = $request->sku_id) {
+//                    $good_sku = GoodSku::find($sku_id);
+//                    if ($good_sku->decreaseStock($amount)<=0) {
+//                        abort(403, '该商品此规格库存不足');
+//                    }
+//                }
+
                 if ($good->decreaseStock($amount) <= 0) {
                     abort(403, '该商品库存不足');
                 }
             }
 
-            if ($totalAmount >= 88) {
-                $order->update(['ship_price' => 0]);
-            } else if ($totalAmount < 88 && $totalWeight <= 5) {
-                $order->update(['ship_price' => 6]);
-                $totalAmount += 6;
-            } else if ($totalAmount < 88 && $totalWeight > 5) {
-                $ship_price = $totalWeight + 1;
-                $order->update(['ship_price' => $ship_price]);
-                $totalAmount += $ship_price;
-            }
-//            $order->update(['ship_price' => 0]);
+//            if ($totalAmount >= 88) {
+//                $order->update(['ship_price' => 0]);
+//            } else if ($totalAmount < 88 && $totalWeight <= 5) {
+//                $order->update(['ship_price' => 6]);
+//                $totalAmount += 6;
+//            } else if ($totalAmount < 88 && $totalWeight > 5) {
+//                $ship_price = $totalWeight + 1;
+//                $order->update(['ship_price' => $ship_price]);
+//                $totalAmount += $ship_price;
+//            }
+            $order->update(['ship_price' => 0]);
 
             if ($request->coupon_id) {
                 $coupon = Coupon::query()->where('id', $request->coupon_id)->first();
