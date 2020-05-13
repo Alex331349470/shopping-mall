@@ -73,4 +73,17 @@ class Good extends Model
             return '否';
         }
     }
+
+    public static function getHundredWhere() {
+        return self::query()->whereBetween('stock', [100, 200]);
+    }
+
+    public static function getFiftyWhere() {
+        return self::query()->whereBetween('stock', [50, 99]);
+    }
+
+    public static function getZeroWhere() {
+        return self::query()->whereBetween('stock', [0, 49]);
+    }
+
 }

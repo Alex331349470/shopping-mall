@@ -7,11 +7,13 @@ use App\Admin\Extensions\ModelList;
 use App\Models\Category;
 use App\Models\Good;
 use App\Models\GoodImage;
+use App\Models\Order;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Encore\Admin\Widgets\Box;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\MessageBag;
 use Illuminate\Validation\Rule;
@@ -33,6 +35,27 @@ class GoodsController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Good());
+        $type = request()->get("type");
+        switch ($type) {
+            case 2: // 100 - 200庫存
+                $grid->model()->whereBetween('stock', [100, 200]);
+                break;
+            case 3: // 50 - 100 库存
+                $grid->model()->whereBetween('stock', [50, 99]);
+                break;
+            case 4: // 0 - 50 库存
+                $grid->model()->whereBetween('stock', [0, 49]);
+                break;
+            default:
+        }
+        $grid->header(function($query) {
+            $info['total_hundred'] = Good::getHundredWhere()->count();
+            $info['total_fifty'] = Good::getFiftyWhere()->count();
+            $info['total_zero'] = Good::getZeroWhere()->count();
+            $info['total_all'] = Good::query()->count();
+            $doughnut = view('admin.goods.header', compact('info'));
+            return new Box('商品库存展示', $doughnut);
+        });
 
         $grid->column('id', __('Id'));
         $grid->column('title', __('名称'));
