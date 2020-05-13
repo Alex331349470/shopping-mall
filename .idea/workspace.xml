@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/wx/GoodsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Good.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,10 +175,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Admin/Controllers/wx" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/admin/goods" />
       <recent name="$PROJECT_DIR$/app/Admin/Extensions" />
-      <recent name="$PROJECT_DIR$/app/Admin/Controllers/wx" />
       <recent name="$PROJECT_DIR$/resources/views/admin/orders" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -287,7 +285,7 @@
       <workItem from="1589337924792" duration="665000" />
       <workItem from="1589352714016" duration="51000" />
       <workItem from="1589358998979" duration="189000" />
-      <workItem from="1589371995701" duration="3964000" />
+      <workItem from="1589371995701" duration="4760000" />
     </task>
     <servers />
   </component>

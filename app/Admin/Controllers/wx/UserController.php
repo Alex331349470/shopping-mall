@@ -83,6 +83,7 @@ class UserController extends AdminController
         $show->field('name', __('微信昵称'));
         $show->field('phone', __('手机号'));
         $show->field('avatar', __('微信头像'));
+        $show->field('open_id',__('open id'));
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
 
