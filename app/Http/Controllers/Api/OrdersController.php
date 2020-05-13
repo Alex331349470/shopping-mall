@@ -80,7 +80,6 @@ class OrdersController extends Controller
                     abort(403, $good->title . '库存为零');
                 }
 
-//                dd(CartItem::query()->where('user_id',$user->id)->where('good_id',$good_id)->first()->amount);
                 // 创建一个 OrderItem 并直接与当前订单关联
                 $item = $order->items()->make([
                     'amount' => $amount = $user->cartItems()->where('good_id', $good_id)->first()->amount,
@@ -92,13 +91,6 @@ class OrdersController extends Controller
                 $item->save();
                 $totalAmount += $good->price * $amount;
                 $totalWeight += $good->weight * $amount;
-
-//                if ($sku_id = $request->sku_id) {
-//                    $good_sku = GoodSku::find($sku_id);
-//                    if ($good_sku->decreaseStock($amount)<=0) {
-//                        abort(403, '该商品此规格库存不足');
-//                    }
-//                }
 
                 if ($good->decreaseStock($amount) <= 0) {
                     abort(403, '该商品库存不足');
@@ -115,8 +107,6 @@ class OrdersController extends Controller
                 $order->update(['ship_price' => $ship_price]);
                 $totalAmount += $ship_price;
             }
-
-//            $order->update(['ship_price' => 0]);
 
             if ($request->coupon_id) {
                 $coupon = Coupon::query()->where('id', $request->coupon_id)->first();

@@ -13,6 +13,7 @@ class ReturnsController extends Controller
     {
         // 校验回调参数是否正确
         $data = app('wechat_pay')->verify();
+        $miniProgram = \EasyWeChat::miniProgram();
         // 找到对应的订单
         $order = Order::where('no', $data->out_trade_no)->first();
         // 订单不存在则告知微信支付

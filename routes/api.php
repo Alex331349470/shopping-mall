@@ -19,7 +19,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
     });
 
     Route::post('status', 'TestsController@show');
-
+    Route::post('template','TestsController@sendTemplate');
     Route::get('client/service', 'ServicesController@service')
         ->name('client.service');
 
@@ -67,8 +67,6 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::get('goods/{good}/reply_images'.'GoodsController@replyImageIndex')
                 ->name('replies.images.index');
 
-            Route::get('goods/{good}/skus','GoodsController@skus')
-                ->name('goods.skus');
             //获取单个商品评论
             Route::get('goods/{good}/replies','GoodsController@replyIndex')
                 ->name('good.replies');
