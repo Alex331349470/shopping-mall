@@ -116,8 +116,8 @@ class TestsController extends Controller
             ],
         ];
 
-        $miniProgram->subscribe_message->send($data);
+        $app = $miniProgram->subscribe_message->send($data);
 
-        return response(null,201);
+        return $app;
     }
 }
