@@ -49,6 +49,7 @@ class UserController extends AdminController
         $grid->column('name', __('微信昵称'));
         $grid->column('phone', __('手机号'));
         $grid->column('avatar', __('微信头像'));
+        $grid->column('info.sub',__('是否订阅'));
         $grid->column('info.gender', __('性别'))->display(function($value) {
             $gender_arr = config('admin.gender');
             return isset($gender_arr[$value])?$gender_arr[$value]:dd($value) . '未知';
