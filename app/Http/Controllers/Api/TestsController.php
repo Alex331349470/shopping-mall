@@ -112,7 +112,7 @@ class TestsController extends Controller
                     'value' => '有订单',
                 ],
                 'time4' => [
-                    'value' => now(),
+                    'value' => now()->toDateTimeString(),
                 ],
             ],
         ];

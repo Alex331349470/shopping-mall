@@ -13,9 +13,28 @@ class ReturnsController extends Controller
     {
         // 校验回调参数是否正确
         $data = app('wechat_pay')->verify();
+
         $miniProgram = \EasyWeChat::miniProgram();
         // 找到对应的订单
         $order = Order::where('no', $data->out_trade_no)->first();
+
+        $sub_data = [
+            'template_id' => 'KDC2c5-w-O2ECbvtBYn1ATDF_-IfqrnDVP3PS4IJ0eI', // 所需下发的订阅模板id
+            'touser' => 'oEOy55VZkvQ85umeRgPLmwpYXLxA',     // 接收者（用户）的 openid
+            'page' => 'page/index/index',       // 点击模板卡片后的跳转页面，仅限本小程序内的页面。支持带参数,（示例index?foo=bar）。该字段不填则模板无跳转。
+            'miniprogram_state' => 'trial',
+            'data' => [         // 模板内容，格式形如 { "key1": { "value": any }, "key2": { "value": any } }
+                'character_string1' => [
+                    'value' => $order->no,
+                ],
+                'phrase3' => [
+                    'value' => '有订单',
+                ],
+                'time4' => [
+                    'value' => now()->toDateTimeString(),
+                ],
+            ],
+        ];
         // 订单不存在则告知微信支付
         if (!$order) {
             return 'fail';
@@ -33,6 +52,7 @@ class ReturnsController extends Controller
             'payment_no' => $data->transaction_id,
         ]);
 
+        $miniProgram->subscribe_message->send($sub_data);
         $this->afterPaid($order);
         return app('wechat_pay')->success();
     }
