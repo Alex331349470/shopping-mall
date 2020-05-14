@@ -54,7 +54,7 @@ class AuthorizationsController extends Controller
 
     public function me(Request $request)
     {
-        return new UserResource($request->user()->with('userInfo'));
+        return new UserResource($request->user());
     }
 
     public function update()
