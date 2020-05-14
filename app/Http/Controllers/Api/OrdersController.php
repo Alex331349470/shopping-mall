@@ -97,17 +97,17 @@ class OrdersController extends Controller
                 }
             }
 
-//            if ($totalAmount >= 88) {
-//                $order->update(['ship_price' => 0]);
-//            } else if ($totalAmount < 88 && $totalWeight <= 5) {
-//                $order->update(['ship_price' => 6]);
-//                $totalAmount += 6;
-//            } else if ($totalAmount < 88 && $totalWeight > 5) {
-//                $ship_price = $totalWeight + 1;
-//                $order->update(['ship_price' => $ship_price]);
-//                $totalAmount += $ship_price;
-//            }
-            $order->update(['ship_price' => 0]);
+            if ($totalAmount >= 88) {
+                $order->update(['ship_price' => 0]);
+            } else if ($totalAmount < 88 && $totalWeight <= 5) {
+                $order->update(['ship_price' => 6]);
+                $totalAmount += 6;
+            } else if ($totalAmount < 88 && $totalWeight > 5) {
+                $ship_price = $totalWeight + 1;
+                $order->update(['ship_price' => $ship_price]);
+                $totalAmount += $ship_price;
+            }
+//            $order->update(['ship_price' => 0]);
             if ($request->coupon_id) {
                 $coupon = Coupon::query()->where('id', $request->coupon_id)->first();
                 $totalAmount -= $coupon->coupon;
