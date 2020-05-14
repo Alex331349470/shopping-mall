@@ -54,7 +54,7 @@ class AuthorizationsController extends Controller
 
     public function me(Request $request)
     {
-        $user = User::query()->where('id',$request->user->id)->with('userInfo')->first();
+        $user = User::query()->where('id',$request->user()->id)->with('userInfo')->first();
         return new UserResource($user);
     }
 
