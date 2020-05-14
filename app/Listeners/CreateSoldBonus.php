@@ -4,7 +4,7 @@ namespace App\Listeners;
 
 use App\Events\OrderPaid;
 use App\Models\Bonus;
-use http\Client\Curl\User;
+use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
