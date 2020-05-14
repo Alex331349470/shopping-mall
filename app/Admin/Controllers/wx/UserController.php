@@ -114,6 +114,8 @@ class UserController extends AdminController
             'required' => '手机号未填写',
             'unique' => '手机号已存在',
         ]);
+
+        $form->switch('info.sub',__('订阅'))->default(false);
         // 账号类别：0-普通用户,1-二级代理,2-一级代理
         $form->select('info.type', __('账号类别'))->options(config('admin.user_type'));
         // 性别:0-保密,1-男,2-女
