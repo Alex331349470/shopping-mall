@@ -20,8 +20,8 @@ class ReturnsController extends Controller
 
         $sub_data = [
             'template_id' => 'KDC2c5-w-O2ECbvtBYn1ATDF_-IfqrnDVP3PS4IJ0eI', // 所需下发的订阅模板id
-            'touser' => 'oEOy55VZkvQ85umeRgPLmwpYXLxA',     // 接收者（用户）的 openid
-            'page' => 'page/index/index',       // 点击模板卡片后的跳转页面，仅限本小程序内的页面。支持带参数,（示例index?foo=bar）。该字段不填则模板无跳转。
+            'touser' => 'oEOy55V1mGErRbuCyXZ6_fVuvq_w',     // 接收者（用户）的 openid
+            'page' => '/page/index/index',       // 点击模板卡片后的跳转页面，仅限本小程序内的页面。支持带参数,（示例index?foo=bar）。该字段不填则模板无跳转。
             'miniprogram_state' => 'trial',
             'data' => [         // 模板内容，格式形如 { "key1": { "value": any }, "key2": { "value": any } }
                 'character_string1' => [
