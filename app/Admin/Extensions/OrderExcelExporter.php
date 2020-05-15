@@ -1,6 +1,7 @@
 <?php
 namespace App\Admin\Extensions;
 
+use App\Models\Order;
 use Encore\Admin\Grid\Exporters\ExcelExporter;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
@@ -36,24 +37,54 @@ class OrderExcelExporter extends ExcelExporter implements WithMapping {
      */
     public function map($order): array
     {
+        $ship_status = (Order::$shipStatusMap[$order->ship_status])??"";
+        $refund_status = (Order::$refundStatusMap[$order->refund_status])??"";
+        $ship_data = '';
+        if (isset($order->ship_data['express_company'])) {
+            $ship_data .= '物流公司：' . $order->ship_data['express_company'];
+        }
+        if (isset($order->ship_data['express_no'])) {
+            $ship_data .= ' 订单编号：' . $order->ship_data['express_no'];
+        }
+
+        $address = '';
+        if (isset($order->address['address'])) {
+            $address .= '地址：' . mb_convert_encoding($order->address['address'], 'UTF8');
+        }
+        if (isset($order->address['zip'])) {
+            $address .= ' 邮编：' . $order->address['zip'];
+        }
+        if (isset($order->address['contact_name'])) {
+            $address .= ' 联系人：' . mb_convert_encoding($order->address['contact_name'], 'UTF8');
+        }
+        if (isset($order->address['contact_phone'])) {
+            $address .= ' 电话：' . mb_convert_encoding($order->address['contact_phone'], 'UTF8');
+        }
+        $extra = '';
+        if (isset($order->extra['refund_reason'])) {
+            $extra .= '申请退款：' . mb_convert_encoding($order->extra['refund_reason'], 'UTF8');
+        }
+        if (isset($order->extra['refund_disagree_reason'])) {
+            $extra .= ' 拒绝退款：' . mb_convert_encoding($order->extra['refund_disagree_reason'], 'UTF8');
+        }
         return [
             $order->id,
             $order->no,
             $order->name,
-            $order->address,
+            $address,
             $order->total_amount,
             $order->remark,
             $order->paid_at,
             $order->payment_method,
             $order->payment_no,
-            $order->refund_status,
+            $refund_status,
             $order->refund_no,
-            $order->closed,
-            $order->reply_status,
-            $order->cancel,
-            $order->ship_status,
-            $order->ship_data,
-            $order->extra,
+            $order->closed == 0?'否':'是',
+            $order->reply_status == 0?'否':'是',
+            $order->cancel == 0?'否':'是',
+            $ship_status,
+            $ship_data,
+            $extra,
             $order->created_at
         ];
     }

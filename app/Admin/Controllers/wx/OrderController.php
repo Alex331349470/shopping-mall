@@ -120,15 +120,17 @@ class OrderController extends AdminController
             }
             return $ship_data;
         });
-//        $grid->column('extra', __('其他数据'))->display(function ($value) {
-//            if ($value->reason) {
-//                return "申请退款：" . $value->reason;
-//            }
-//
-//            if ($value->refund_disagree_reason) {
-//                return "拒绝退款：" . $value->refund_disagree_reason;
-//            }
-//        });
+        $grid->column('extra', __('其他数据'))->display(function ($value) {
+            $str = '';
+            if (isset($value['refund_reason'])) {
+                $str .= "申请退款：" . $value['refund_reason'];
+            }
+
+            if (isset($value['refund_disagree_reason'])) {
+                $str .= "<br/>拒绝退款：" . $value['refund_disagree_reason'];
+            }
+            return $str;
+        });
         $grid->column('created_at', __('创建时间'));
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
