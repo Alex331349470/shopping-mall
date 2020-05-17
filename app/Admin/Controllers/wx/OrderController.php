@@ -135,7 +135,7 @@ class OrderController extends AdminController
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableDelete();
-//            $actions->disableView();
+            $actions->disableEdit();
 //            $actions->add(new ModelList($actions->getKey(), 'order.info.list', '订单详情'));
             if ($actions->row->refund_status == Order::REFUND_STATUS_APPLIED) {
                 $extra_json = $actions->row->extra;

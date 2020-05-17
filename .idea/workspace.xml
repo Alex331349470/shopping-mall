@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/wx/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/wx/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/wx/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/wx/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressesController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +164,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Admin/Extensions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -292,6 +295,8 @@
       <workItem from="1589443621214" duration="12000" />
       <workItem from="1589468373805" duration="5518000" />
       <workItem from="1589505221686" duration="4891000" />
+      <workItem from="1589590174115" duration="1473000" />
+      <workItem from="1589714992887" duration="4422000" />
     </task>
     <servers />
   </component>

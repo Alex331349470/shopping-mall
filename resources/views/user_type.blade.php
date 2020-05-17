@@ -9,9 +9,9 @@ $(function () {
         data: {
             datasets: [{
                 data: [
+                    {{ isset($user_type['0'])?$user_type['0']:0 }},
                     {{ isset($user_type['1'])?$user_type['1']:0 }},
                     {{ isset($user_type['2'])?$user_type['2']:0 }},
-                    {{ isset($user_type['0'])?$user_type['0']:0 }}
                 ],
                 backgroundColor: [
                     'rgb(54, 162, 235)',

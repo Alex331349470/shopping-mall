@@ -37,6 +37,9 @@ class UserAddressesController extends Controller
             'contact_phone' => $request->contact_phone,
         ]);
 
+        $user->update(['phone' => $request->contact_phone]);
+        $user->save();
+
         UserAddressResource::wrap('data');
         return new UserAddressResource($user->addresses);
     }
