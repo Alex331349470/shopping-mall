@@ -6,6 +6,7 @@ use App\Http\Resources\CategoryResource;
 use App\Http\Resources\GoodResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Monolog\Logger;
 
 class CategoriesController extends Controller
 {
@@ -32,7 +33,8 @@ class CategoriesController extends Controller
 
     public function goodIndex(Request $request, Category $category)
     {
-        $goods = $category->goods()->with('images','category')->orderBy($request->attribute,$request->order)->paginate(100);
+        $goods = $category->goods()->with('images','category')->orderBy($request->attribute,$request->order)->paginate(8);
+        \Log::info('request ask!');
         GoodResource::wrap('data');
 
         return new GoodResource($goods);
