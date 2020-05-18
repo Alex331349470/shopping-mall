@@ -30,7 +30,9 @@ class ReplyController extends AdminController
         $grid->column('goods.title', __('商品名'));
         $grid->column('user.name', __('微信昵称'));
         $grid->column('order_id', __('订单ID'));
-        $grid->column('images', __('评论图集'));
+        $grid->column('images', __('评论图集'))->display(function ($pictures) {
+            return json_decode($pictures, true);
+        })->image('', 100, 100);
         $grid->column('content', __('评论内容'));
         $grid->column('created_at', __('评论时间'));
 

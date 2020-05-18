@@ -87,7 +87,7 @@ class GoodsController extends AdminController
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableView();
-            $actions->add(new ModelList($actions->getKey(), 'images.index', '图片列表'));
+//            $actions->add(new ModelList($actions->getKey(), 'images.index', '图片列表'));
         });
 
         $grid->disableExport();
