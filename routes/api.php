@@ -18,6 +18,8 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
         return 'this is version 1';
     });
 
+    Route::post('arrive','TestsController@checkAddress');
+
     Route::post('status', 'TestsController@show');
     Route::post('template','TestsController@sendTemplate');
     Route::get('client/service', 'ServicesController@service')
