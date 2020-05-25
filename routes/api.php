@@ -28,6 +28,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
     Route::post('qrcode','TestsController@qrcode')
         ->name('qrcode');
 
+
     Route::middleware('throttle:'.config('api.rate_limits.sign'))
         ->group(function (){
             //小程序注册以及登录
@@ -75,6 +76,21 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             //商品搜索
             Route::post('goods/search','GoodsController@index')
                 ->name('goods.search,index');
+
+            Route::get('gps_basic_data','GpsBasicDataController@index')
+                ->name('gps_basic_data.index');
+
+            Route::post('gps_basic_data','GpsBasicDataController@store')
+                ->name('gps_basic_data.store');
+
+            Route::get('gps_basic_data/{gps_basic_data}', 'GpsBasicDataController@show')
+                ->name('gps_basic_data.show');
+
+            Route::put('gps_basic_data/{gps_basic_data}','GpsBasicDataController@update')
+                ->name('gps_basic_data.update');
+
+            Route::delete('gps_basic_data/{gps_basic_data}', 'GpsBasicDataController@destroy')
+                ->name('gps_basic_data.destroy');
 
             //用户认证API
             Route::middleware('auth:api')->group(function (){
