@@ -2,6 +2,7 @@
 namespace App\Admin\Extensions;
 
 use App\Models\Order;
+use App\Models\OrderItem;
 use Encore\Admin\Grid\Exporters\ExcelExporter;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
@@ -25,6 +26,7 @@ class OrderExcelExporter extends ExcelExporter implements WithMapping {
         'cancel' => '是否取消',
         'ship_status' => '物流状态',
         'ship_data' => '物流信息',
+        'goods_info' => '商品信息',
         'extra' => '其他数据',
         'created_at' => '创建时间',
     ];
@@ -67,6 +69,13 @@ class OrderExcelExporter extends ExcelExporter implements WithMapping {
         if (isset($order->extra['refund_disagree_reason'])) {
             $extra .= ' 拒绝退款：' . mb_convert_encoding($order->extra['refund_disagree_reason'], 'UTF8');
         }
+        //商品信息
+        $goods_info = '';
+        $orderItem = OrderItem::query()->with("good")->where('order_id', $order->id)->select();
+        foreach ($orderItem as $item) {
+            $goods_info .= is_null($item->good)?"商品不存在":$item->good->name;
+            $goods_info .= '\n数量：' . $item->amount . ' 价格：' . $item->price . '\n';
+        }
         return [
             $order->id,
             $order->no,
@@ -84,6 +93,7 @@ class OrderExcelExporter extends ExcelExporter implements WithMapping {
             $order->cancel == 0?'否':'是',
             $ship_status,
             $ship_data,
+            $goods_info,
             $extra,
             $order->created_at
         ];

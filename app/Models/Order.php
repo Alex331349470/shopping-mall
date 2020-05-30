@@ -153,4 +153,9 @@ class Order extends Model
     public static function getNotifyShipWhere() {
         return self::query()->where('ship_status', self::SHIP_STATUS_NOTICE);
     }
+
+    public static function getDeliveredShipWhere() {
+        return self::query()->where('ship_status', self::SHIP_STATUS_DELIVERED);
+    }
+
 }

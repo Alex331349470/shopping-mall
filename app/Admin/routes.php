@@ -25,6 +25,7 @@ Route::group([
     $router->get('orders/{order}', 'wx\OrderController@infoList')->name('order.info.list');
     $router->post('orders/{order}/ship', 'wx\OrderController@ship')->name('admin.orders.ship');
     $router->post('orders/{order}/refund', 'wx\OrderController@handleRefund')->name('admin.orders.handle_refund');
+    $router->get('orders/{order}/received', 'wx\OrderController@received')->name('admin.orders.received');
     // 商品管理
     // 商品
     $router->resource('wx/goods', wx\GoodsController::class);

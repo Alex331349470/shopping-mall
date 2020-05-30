@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers\wx;
 
+use App\Admin\Extensions\OrderDeliver;
 use App\Admin\Extensions\OrderExcelExporter;
 use App\Admin\Extensions\OrderRefund;
 use App\Http\Requests\Admin\HandleRefundRequest;
@@ -50,6 +51,9 @@ class OrderController extends AdminController
             case 5: // 提醒发货
                 $grid->model()->where('ship_status', Order::SHIP_STATUS_NOTICE);
                 break;
+            case 6: // 已发货
+                $grid->model()->where('ship_status', Order::SHIP_STATUS_DELIVERED);
+                break;
             default:
         }
 
@@ -65,6 +69,8 @@ class OrderController extends AdminController
             $info['total_all'] = Order::query()->count("id");
 
             $info['total_notify'] = Order::getNotifyShipWhere()->count("id");
+
+            $info['total_delivered'] = Order::getDeliveredShipWhere()->count("id");
 
             $doughnut = view('admin.orders.header', compact('info'));
             return new Box('订单状态展示', $doughnut);
@@ -134,9 +140,9 @@ class OrderController extends AdminController
         $grid->column('created_at', __('创建时间'));
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
-            //$actions->disableDelete();
+//            $actions->disableDelete();
             $actions->disableEdit();
-//            $actions->add(new ModelList($actions->getKey(), 'order.info.list', '订单详情'));
+            $actions->add(new OrderDeliver($actions->getKey(), "orders"));
             if ($actions->row->refund_status == Order::REFUND_STATUS_APPLIED) {
                 $extra_json = $actions->row->extra;
                 $actions->add(new OrderRefund($actions->getKey(), 'admin.orders.handle_refund', '是否退款', $extra_json->reason??''));
@@ -217,6 +223,7 @@ class OrderController extends AdminController
         // 返回上一页
         return redirect()->back();
     }
+
     public function received(Order $order, Request $request)
     {
         // 判断订单的发货状态是否为已发货
@@ -225,7 +232,10 @@ class OrderController extends AdminController
         }
 
         // 更新发货状态为已收到
-        $order->update(['ship_status' => Order::SHIP_STATUS_RECEIVED]);
+        $order->update([
+            'ship_status' => Order::SHIP_STATUS_RECEIVED,
+            'self_post' => 1,
+        ]);
 
         // 返回原页面
         return response(null,201);

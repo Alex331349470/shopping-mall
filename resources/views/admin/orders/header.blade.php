@@ -5,6 +5,9 @@
 @if($info['total_unship'] > 0)
 <a class='btn btn-xs action-btn btn-warning grid-row-refuse' href="{{ route("orders.index") }}?type=2"><i class='fa fa-warning'>支付待发货{{ $info['total_unship'] }}</i></a>
 @endif
+@if($info['total_notify'] > 0)
+    <a class='btn btn-xs action-btn btn-warning grid-row-refuse' href="{{ route("orders.index") }}?type=6"><i class='fa fa-ship'>已发货{{ $info['total_delivered'] }}</i></a>
+@endif
 @if($info['total_unrefund'] > 0)
 <a class='btn btn-xs action-btn btn-danger grid-row-refuse' href="{{ route("orders.index") }}?type=3"><i class='fa fa-close'>退款未处理{{ $info['total_unrefund'] }}</i></a>
 @endif
