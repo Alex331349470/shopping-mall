@@ -12,7 +12,7 @@
             <tbody>
             <tr>
                 <td>买家：</td>
-                <td>{{ $order->user->name }}</td>
+                <td>{{ is_null($order->user)?"":$order->user->name }}</td>
                 <td>支付时间：</td>
                 <td>{{ is_null($order->paid_at)?"":$order->paid_at->format('Y-m-d H:i:s') }}</td>
             </tr>
@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td>收货地址</td>
-                <td colspan="3">{{ $order->address['address'] }} {{ $order->address['zip'] }} {{ $order->address['contact_name'] }} {{ $order->address['contact_phone'] }}</td>
+                <td colspan="3" >地址：{{ $order->address['address'] }}<br/> 邮编：{{ $order->address['zip'] }}<br/> 联系人：{{ $order->address['contact_name'] }}<br/> 电话：{{ $order->address['contact_phone'] }}</td>
             </tr>
             <tr>
                 <td rowspan="{{ $order->items->count() + 1 }}">商品列表</td>
@@ -34,7 +34,7 @@
             </tr>
             @foreach($order->items as $item)
                 <tr>
-                    <td>{{ $item->good->title }} {{ $item->good->title }}</td>
+                    <td>{{ is_null($item->good)?'商品不存在':$item->good->title }}</td>
                     <td>￥{{ $item->price }}</td>
                     <td>{{ $item->amount }}</td>
                 </tr>

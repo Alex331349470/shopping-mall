@@ -112,10 +112,10 @@ class OrderController extends AdminController
         });
         $grid->column('ship_data', __('物流信息'))->display(function ($value) {
             $ship_data = '';
-            if (isset($order->ship_data['express_company'])) {
+            if (isset($value['express_company'])) {
                 $ship_data .= '物流公司：' . $value['express_company'];
             }
-            if (isset($order->ship_data['express_no'])) {
+            if (isset($value['express_no'])) {
                 $ship_data .= ' 订单编号：' . $value['express_no'];
             }
             return $ship_data;
@@ -134,7 +134,7 @@ class OrderController extends AdminController
         $grid->column('created_at', __('创建时间'));
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
-            $actions->disableDelete();
+            //$actions->disableDelete();
             $actions->disableEdit();
 //            $actions->add(new ModelList($actions->getKey(), 'order.info.list', '订单详情'));
             if ($actions->row->refund_status == Order::REFUND_STATUS_APPLIED) {

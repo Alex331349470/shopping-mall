@@ -35,11 +35,13 @@ class AuthorizationsController extends Controller
             $user = User::create($attributes);
 
             $userInfo->user_id = $user->id;
-
-            if (!empty($request->user_id)) {
+            if (!empty($request->user_id) && $request->user_id!='null') {
                 $userInfo->parent_id = $request->user_id;
             }
 
+	    \Log::info("request_id = " . $request->user_id);
+	    \Log::info(getType($request->user_id));
+	    \Log::info($userInfo);
             $userInfo->save();
 
             $token = auth('api')->login($user);

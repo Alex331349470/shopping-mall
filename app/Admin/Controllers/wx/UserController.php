@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers\wx;
 
+use App\Admin\Extensions\ModelDelete;
 use App\Models\User;
 use App\Models\UserInfo;
 use Encore\Admin\Controllers\AdminController;
@@ -77,11 +78,17 @@ class UserController extends AdminController
             if ($actions->row->type == 0) {
                 $actions->disableView();
             }
+            $actions->disableDelete();
+            $actions->add(new ModelDelete($actions->getKey(), "users"));
         });
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
-            $filter->like('name', '微信昵称');
-            $filter->equal('phone', '手机号');
+            $filter->where(function($query) {
+		$name = request()->input('name');
+                $query->where('users.name', 'like', "%{$name}%");
+	    }, __('微信昵称'), 'name');
+//            $filter->like('name', '微信昵称');            
+	    $filter->equal('phone', '手机号');
         });
         return $grid;
     }
@@ -181,4 +188,29 @@ class UserController extends AdminController
         return $form;
     }
 
+    public function destroy($id)
+    {
+        DB::beginTransaction();
+        try{
+            $user = User::query()->findOrFail($id);
+            UserInfo::query()->where('user_id', $user->id)->delete();
+            \Log::info("删除用户id", ["user_id" => $user->id]);
+            $user->delete();
+            DB::commit();
+            $response = [
+                'status'  => true,
+                'message' => trans('admin.delete_succeeded'),
+            ];
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            $response = [
+                'status'  => false,
+                'message' => $exception->getMessage() ?: trans('admin.delete_failed'),
+            ];
+        }
+
+        return response()->json($response);
+    }
+
 }
+

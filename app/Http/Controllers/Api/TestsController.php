@@ -11,7 +11,22 @@ class TestsController extends Controller
 {
     public function show(Request $request)
     {
+	if ($request->company == "YJYP") {
+            $data = [
+                "LogisticCode" => $request->code,
+                "ShipperCode" => $request->company,
+                "Traces" => [
+                    ["AcceptStation" => "商品已发货", "AcceptTime" => ""],
+                    ["AcceptStation" => "商品配送中", "AcceptTime" => ""],
+                    ["AcceptStation" => "配送人员电话：18212025642", "AcceptTime" => ""],
+                ],
+                "State" => "2",
+                "EBusinessID" => "12345678",
+                "Success" => true,
+            ];
 
+            return $data;
+        }
         $logisticResult=$this->getOrderTracesByJson($request->company, $request->code);
 
         return $logisticResult;
