@@ -71,10 +71,10 @@ class OrderExcelExporter extends ExcelExporter implements WithMapping {
         }
         //商品信息
         $goods_info = '';
-        $orderItem = OrderItem::query()->with("good")->where('order_id', $order->id)->select();
+        $orderItem = OrderItem::query()->with("good")->where('order_id', $order->id)->get();
         foreach ($orderItem as $item) {
             $goods_info .= is_null($item->good)?"商品不存在":$item->good->name;
-            $goods_info .= '\n数量：' . $item->amount . ' 价格：' . $item->price . '\n';
+            $goods_info .= ' 数量：' . $item->amount . ' 价格：' . $item->price . ' ';
         }
         return [
             $order->id,

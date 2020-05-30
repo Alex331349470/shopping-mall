@@ -142,7 +142,9 @@ class OrderController extends AdminController
         $grid->actions(function (Grid\Displayers\Actions $actions) {
 //            $actions->disableDelete();
             $actions->disableEdit();
-            $actions->add(new OrderDeliver($actions->getKey(), "orders"));
+            if ($actions->row->ship_status == Order::SHIP_STATUS_DELIVERED) {
+                $actions->add(new OrderDeliver($actions->getKey(), "orders"));
+            }
             if ($actions->row->refund_status == Order::REFUND_STATUS_APPLIED) {
                 $extra_json = $actions->row->extra;
                 $actions->add(new OrderRefund($actions->getKey(), 'admin.orders.handle_refund', '是否退款', $extra_json->reason??''));
@@ -228,7 +230,7 @@ class OrderController extends AdminController
     {
         // 判断订单的发货状态是否为已发货
         if ($order->ship_status !== Order::SHIP_STATUS_DELIVERED) {
-            abort(403,'未发货');
+            abort(403,'发货状态才能确认收货');
         }
 
         // 更新发货状态为已收到
