@@ -735,6 +735,7 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'App\\Admin\\Extensions\\CommissionInfoList' => __DIR__ . '/../..' . '/app/Admin/Extensions/CommissionInfoList.php',
         'App\\Admin\\Extensions\\ModelDelete' => __DIR__ . '/../..' . '/app/Admin/Extensions/ModelDelete.php',
         'App\\Admin\\Extensions\\ModelList' => __DIR__ . '/../..' . '/app/Admin/Extensions/ModelList.php',
+        'App\\Admin\\Extensions\\OrderDeliver' => __DIR__ . '/../..' . '/app/Admin/Extensions/OrderDeliver.php',
         'App\\Admin\\Extensions\\OrderExcelExporter' => __DIR__ . '/../..' . '/app/Admin/Extensions/OrderExcelExporter.php',
         'App\\Admin\\Extensions\\OrderRefund' => __DIR__ . '/../..' . '/app/Admin/Extensions/OrderRefund.php',
         'App\\Console\\Commands\\GenerateToken' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateToken.php',
