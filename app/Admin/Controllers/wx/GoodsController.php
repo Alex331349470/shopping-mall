@@ -80,6 +80,7 @@ class GoodsController extends AdminController
         $grid->column('category.name', __('分类名称'));
         $grid->column('weight',__('重量(KG)'));
         $grid->column('good_no', __('商品货号'));
+        $grid->column('brand', __('品牌'));
         $grid->column('stock', __('库存'));
         $grid->column('sold_count', __('销量'));
         $grid->column('review_count', __('浏览量'));
@@ -160,6 +161,7 @@ class GoodsController extends AdminController
         $form->select('category_id', __('分类名称'))->options($category_lv1)->required();
 
         $form->text('good_no', __('商品货号'));
+        $form->text('brand', __('品牌'));
         $form->number('stock', __('库存'))->attribute('min', '0')->required()->rules($rules);
         $form->hasMany('images', '商品图集',function (Form\NestedForm $form) {
             $form->text('description', '图片描述');
