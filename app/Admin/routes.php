@@ -11,7 +11,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-
     // 会员管理
     $router->resource('wx/users', wx\UserController::class);
     // 等级设置
