@@ -15,6 +15,8 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Encore\Admin\Widgets\Box;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\Integer;
 use Request;
 
 class OrderController extends AdminController
@@ -207,13 +209,19 @@ class OrderController extends AdminController
             abort(403,'该订单已发货');
         }
         // Laravel 5.5 之后 validate 方法可以返回校验过的值
-        $data = $this->validate($request, [
-            'express_company' => ['required'],
-            'express_no'      => ['required'],
-        ], [], [
-            'express_company' => '物流公司',
-            'express_no'      => '物流单号',
-        ]);
+        if (strtoupper($request->post('express_company')) == 'YJYP') {
+            $data['express_company'] = 'YJYP';
+            $data['express_no'] = date('YmdHis') . rand(100, 1000);
+        } else {
+            $data = $this->validate($request, [
+                'express_company' => ['required'],
+                'express_no'      => ['required'],
+            ], [], [
+                'express_company' => '物流公司',
+                'express_no'      => '物流单号',
+            ]);
+        }
+
         // 将订单发货状态改为已发货，并存入物流信息
         $order->update([
             'ship_status' => Order::SHIP_STATUS_DELIVERED,
@@ -234,10 +242,11 @@ class OrderController extends AdminController
         }
 
         // 更新发货状态为已收到
-        $order->update([
-            'ship_status' => Order::SHIP_STATUS_RECEIVED,
-            'self_post' => 1,
-        ]);
+        $data['ship_status'] = Order::SHIP_STATUS_RECEIVED;
+        if ($order->ship_data && isset($order->ship_data['express_company']) && $order->ship_data['express_company'] == 'YJYP') {
+            $data['self_post'] = 1;
+        }
+        $order->update($data);
 
         // 返回原页面
         return response(null,201);
