@@ -12,23 +12,36 @@ class TestsController extends Controller
 {
     public function show(Request $request)
     {
-        if ($request->company == "test") {
-            $order = Order::query()->where('ship_data->express_no','20200601114423307')->first();
-            return $order;
-        }
         if ($request->company == "YJYP") {
-            $data = [
-                "LogisticCode" => $request->code,
-                "ShipperCode" => $request->company,
-                "Traces" => [
-                    ["AcceptStation" => "商品已发货", "AcceptTime" => ""],
-                    ["AcceptStation" => "商品配送中", "AcceptTime" => ""],
-                    ["AcceptStation" => "配送人员电话：18212025642", "AcceptTime" => ""],
-                ],
-                "State" => "2",
-                "EBusinessID" => "12345678",
-                "Success" => true,
-            ];
+            $order = Order::query()->where('ship_data->express_no',$request->code)->first();
+            if ($order->self_post) {
+                $data = [
+                    "LogisticCode" => $request->code,
+                    "ShipperCode" => $request->company,
+                    "Traces" => [
+                        ["AcceptStation" => "商品已发货", "AcceptTime" => ""],
+                        ["AcceptStation" => "商品配送中", "AcceptTime" => ""],
+                        ["AcceptStation" => "配送人员电话：18212025642", "AcceptTime" => ""],
+                        ["AcceptStation" => "已收货", "AcceptTime" => ""],
+                    ],
+                    "State" => "2",
+                    "EBusinessID" => "12345678",
+                    "Success" => true,
+                ];
+            } else {
+                $data = [
+                    "LogisticCode" => $request->code,
+                    "ShipperCode" => $request->company,
+                    "Traces" => [
+                        ["AcceptStation" => "商品已发货", "AcceptTime" => ""],
+                        ["AcceptStation" => "商品配送中", "AcceptTime" => ""],
+                        ["AcceptStation" => "配送人员电话：18212025642", "AcceptTime" => ""],
+                    ],
+                    "State" => "2",
+                    "EBusinessID" => "12345678",
+                    "Success" => true,
+                ];
+            }
 
             return $data;
         }
