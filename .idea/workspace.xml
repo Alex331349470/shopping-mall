@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -313,7 +312,7 @@
       <workItem from="1590873986762" duration="1053000" />
       <workItem from="1590896774027" duration="1210000" />
       <workItem from="1590906379728" duration="6899000" />
-      <workItem from="1590988073297" duration="2086000" />
+      <workItem from="1590988073297" duration="2513000" />
     </task>
     <servers />
   </component>
