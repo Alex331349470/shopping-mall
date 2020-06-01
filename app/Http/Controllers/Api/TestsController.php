@@ -13,7 +13,7 @@ class TestsController extends Controller
     public function show(Request $request)
     {
         if ($request->company == "test") {
-            $order = Order::query()->whereJsonContains('ship_data->express_no','20200601114423307')->first();
+            $order = Order::query()->where('ship_data->express_no','20200601114423307')->first();
             return $order;
         }
         if ($request->company == "YJYP") {
