@@ -25,7 +25,7 @@ class CategoriesController extends Controller
     {
         $categories = Category::query()->where('parent_id', $category->id)->get();
         if (!$categories) {
-            abort(403,'无二级分类');
+            abort(403, '无二级分类');
         }
         CategoryResource::wrap('data');
         return CategoryResource::collection($categories);
@@ -33,7 +33,7 @@ class CategoriesController extends Controller
 
     public function goodIndex(Request $request, Category $category)
     {
-        $goods = $category->goods()->with('images','category')->orderBy($request->attribute,$request->order)->get();
+        $goods = $category->goods()->with('images', 'category')->orderBy($request->attribute, $request->order)->orderBy('brand')->get();
         GoodResource::wrap('data');
 
         return new GoodResource($goods);
