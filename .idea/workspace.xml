@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopmall.sql" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -317,6 +319,9 @@
       <workItem from="1591320807497" duration="1000000" />
       <workItem from="1591326789174" duration="411000" />
       <workItem from="1591327336343" duration="342000" />
+      <workItem from="1591327892167" duration="533000" />
+      <workItem from="1591329551273" duration="83000" />
+      <workItem from="1591349266540" duration="9000" />
     </task>
     <servers />
   </component>
