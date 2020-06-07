@@ -14,9 +14,9 @@ use Illuminate\Http\Request;
 */
 
 Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
-    Route::get('version',function (){
-        return 'this is version 1';
-    });
+//    Route::get('version',function (){
+//        return 'this is version 1';
+//    });
 
     Route::post('arrive','TestsController@checkAddress');
 
@@ -67,7 +67,7 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::get('ads','AdsController@index')
                 ->name('ads.index');
             //获取单个商品评论图片
-            Route::get('goods/{good}/reply_images'.'GoodsController@replyImageIndex')
+            Route::get('goods/{good}/reply_images','GoodsController@replyImageIndex')
                 ->name('replies.images.index');
 
             //获取单个商品评论
