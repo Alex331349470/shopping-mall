@@ -3,20 +3,16 @@
 namespace App\Admin\Controllers\wx;
 
 use App\Admin\Extensions\ModelDelete;
+use App\Admin\Extensions\UsersExcleExpoter;
 use App\Models\User;
 use App\Models\UserInfo;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
-use Encore\Admin\Show;
 use Encore\Admin\Widgets\Box;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\MessageBag;
 use Illuminate\Validation\Rule;
-use mysql_xdevapi\ColumnResult;
-use phpDocumentor\Reflection\Type;
-use function foo\func;
 
 class UserController extends AdminController
 {
@@ -84,11 +80,10 @@ class UserController extends AdminController
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->where(function($query) {
-		$name = request()->input('name');
+                $name = request()->input('name');
                 $query->where('users.name', 'like', "%{$name}%");
-	    }, __('微信昵称'), 'name');
-//            $filter->like('name', '微信昵称');            
-	    $filter->equal('phone', '手机号');
+            }, __('微信昵称'), 'name');
+	        $filter->equal('phone', '手机号');
         });
         return $grid;
     }
@@ -106,7 +101,7 @@ class UserController extends AdminController
      * Make a show builder.
      *
      * @param mixed $id
-     * @return Show
+     * @return Grid
      */
     protected function detail2($id)
     {
@@ -137,7 +132,7 @@ class UserController extends AdminController
 
         $grid->column('created_at', __('创建时间'));
 
-        $grid->disableExport();
+        $grid->exporter(new UsersExcleExpoter());
         $grid->disableCreateButton();
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             if ($actions->row->type == 0) {
