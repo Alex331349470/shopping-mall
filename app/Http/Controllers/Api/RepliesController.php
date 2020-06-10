@@ -41,7 +41,7 @@ class RepliesController extends Controller
 
     public function index(Request $request)
     {
-        $replies = Reply::whereUserId($request->user()->id)->where('passed', true)->with('user','order','good.images')->get();
+        $replies = Reply::whereUserId($request->user()->id)->with('user','order','good.images')->get();
 
         return new ReplyResource($replies);
     }

@@ -21,7 +21,7 @@ class GoodsController extends Controller
     public function replyIndex(Good $good)
     {
         ReplyResource::wrap('data');
-        $replies = Reply::query()->whereGoodId($good->id)->with('user')->get();
+        $replies = Reply::query()->whereGoodId($good->id)->wherePassed(true)->with('user')->get();
         return new ReplyResource($replies);
     }
 
