@@ -738,6 +738,7 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'App\\Admin\\Extensions\\OrderDeliver' => __DIR__ . '/../..' . '/app/Admin/Extensions/OrderDeliver.php',
         'App\\Admin\\Extensions\\OrderExcelExporter' => __DIR__ . '/../..' . '/app/Admin/Extensions/OrderExcelExporter.php',
         'App\\Admin\\Extensions\\OrderRefund' => __DIR__ . '/../..' . '/app/Admin/Extensions/OrderRefund.php',
+        'App\\Admin\\Extensions\\UsersExcleExpoter' => __DIR__ . '/../..' . '/app/Admin/Extensions/UsersExcleExpoter.php',
         'App\\Console\\Commands\\GenerateToken' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateToken.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\OrderPaid' => __DIR__ . '/../..' . '/app/Events/OrderPaid.php',

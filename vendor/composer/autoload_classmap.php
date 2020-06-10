@@ -25,6 +25,7 @@ return array(
     'App\\Admin\\Extensions\\OrderDeliver' => $baseDir . '/app/Admin/Extensions/OrderDeliver.php',
     'App\\Admin\\Extensions\\OrderExcelExporter' => $baseDir . '/app/Admin/Extensions/OrderExcelExporter.php',
     'App\\Admin\\Extensions\\OrderRefund' => $baseDir . '/app/Admin/Extensions/OrderRefund.php',
+    'App\\Admin\\Extensions\\UsersExcleExpoter' => $baseDir . '/app/Admin/Extensions/UsersExcleExpoter.php',
     'App\\Console\\Commands\\GenerateToken' => $baseDir . '/app/Console/Commands/GenerateToken.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\OrderPaid' => $baseDir . '/app/Events/OrderPaid.php',

@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BonusesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BonusesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -323,7 +330,15 @@
       <workItem from="1591453343605" duration="914000" />
       <workItem from="1591500521339" duration="50000" />
       <workItem from="1591508538641" duration="1261000" />
-      <workItem from="1591514079248" duration="3704000" />
+      <workItem from="1591514079248" duration="5247000" />
+      <workItem from="1591535489228" duration="1078000" />
+      <workItem from="1591582442976" duration="12000" />
+      <workItem from="1591592152528" duration="3153000" />
+      <workItem from="1591605222303" duration="592000" />
+      <workItem from="1591607938410" duration="1728000" />
+      <workItem from="1591703222380" duration="1570000" />
+      <workItem from="1591769521349" duration="843000" />
+      <workItem from="1591789887528" duration="755000" />
     </task>
     <servers />
   </component>

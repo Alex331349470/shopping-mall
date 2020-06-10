@@ -14,21 +14,16 @@ use Illuminate\Http\Request;
 */
 
 Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
-//    Route::get('version',function (){
-//        return 'this is version 1';
-//    });
-
-    Route::post('arrive','TestsController@checkAddress');
-
+    //物流信息接口
     Route::post('status', 'TestsController@show');
-    Route::post('template','TestsController@sendTemplate');
+    //小程序用户service
     Route::get('client/service', 'ServicesController@service')
         ->name('client.service');
-
+    //生产微信小程序路由小程序码
     Route::post('qrcode','TestsController@qrcode')
         ->name('qrcode');
 
-
+    //小程序api调用设置
     Route::middleware('throttle:'.config('api.rate_limits.sign'))
         ->group(function (){
             //小程序注册以及登录
@@ -46,10 +41,10 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::get('authorizations/access_token', 'AuthorizationsController@getAccessToken')
                 ->name('authorizations.access_token');
         });
-
+    //小程序APIaccess调用限制
     Route::middleware('throttle:'.config('api.rate_limits.access'))
         ->group(function (){
-            // 登录后可以访问的接
+            // 登录后可以访问的接口
             // 分类列表
             Route::get('categories', 'CategoriesController@index')
                 ->name('categories.index');
@@ -103,10 +98,10 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
                 //用户收益总和
                 Route::get('user/bonuses/total','BonusesController@bonusTotal')
                     ->name('user.bonuses.total');
-
+                //当前用户优惠券信息
                 Route::get('user/coupon', 'CouponsController@index')
                     ->name('user.coupon.index');
-
+                //当前用户优惠券生成
                 Route::post('user/coupon','CouponsController@store')
                     ->name('user.coupon.store');
                 //上传图片

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    //当前用户购物车信息
     public function index(Request $request)
     {
         $cartItems = $request->user()->cartItems()->with('user','good.images')->get();
@@ -19,11 +20,14 @@ class CartController extends Controller
         return new CartItemResource($cartItems);
     }
 
+
     public function cartIndex(Request $request)
     {
         $cartItems = $request->user()->cartItems;
         return CartItemResource::collection($cartItems);
     }
+
+
     public function add(AddCartRequest $request)
     {
         $user = $request->user();
