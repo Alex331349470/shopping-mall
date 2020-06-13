@@ -34,6 +34,9 @@ class ReplyController extends AdminController
             return json_decode($pictures, true);
         })->image('', 100, 100);
         $grid->column('content', __('评论内容'));
+        $grid->column('passed', __('是否显示'))->display(function($value) {
+            return $value?'是':'否';
+        });
         $grid->column('created_at', __('评论时间'));
 
         $grid->tools(function (Grid\Tools $tools) {
@@ -42,7 +45,6 @@ class ReplyController extends AdminController
 
         $grid->actions(function (Grid\Displayers\Actions $action) {
             $action->disableView();
-            $action->disableEdit();
         });
         $grid->disableCreateButton();
         $grid->disableExport();
@@ -84,12 +86,12 @@ class ReplyController extends AdminController
     {
         $form = new Form(new Reply());
 
-        $form->number('good_id', __('Good id'));
-        $form->number('user_id', __('User id'));
-        $form->number('order_id', __('Order id'));
-        $form->text('images', __('Images'));
-        $form->textarea('content', __('Content'));
-
+        $form->number('goods.title', __('商品名称'))->disable();
+        $form->number('user.name', __('微信昵称'))->disable();
+        $form->number('order_id', __('订单id'))->disable();
+        $form->text('images', __('评论图集地址'))->disable();
+        $form->textarea('content', __('Content'))->disable();
+        $form->switch('passed', __('是否通过'));
         return $form;
     }
 }
