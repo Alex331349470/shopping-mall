@@ -53,7 +53,7 @@ class GoodsController extends Controller
     public function hotIndex(Request $request)
     {
 //        $goods = Good::query()->where('on_sale', true)->where('on_hot',true)->with('images','category')->paginate(6);
-        $goods = Good::query()->where('on_sale',true)->whereIn('id', [100,101,102,103])->with('images','category')->paginate(4);
+        $goods = Good::query()->where('on_sale',true)->with('images','category')->paginate(8);
 
         if (!$goods) {
             abort(403, '没有商品');
