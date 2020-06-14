@@ -77,6 +77,7 @@ class GoodsController extends Controller
 
     public function skus(Good $good)
     {
+        dd($good);
         $skus = GoodSku::query()->where('good_id',$good->id)->get();
         GoodSkuResource::wrap('data');
         return new GoodSkuResource($skus);
