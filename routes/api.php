@@ -72,6 +72,8 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::post('goods/search','GoodsController@index')
                 ->name('goods.search,index');
 
+            Route::get('goods/{good}/skus', 'GoodsController@skus')
+                ->name('good.skus');
             Route::get('gps_basic_data','GpsBasicDataController@index')
                 ->name('gps_basic_data.index');
 
