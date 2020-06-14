@@ -65,6 +65,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::get('goods/{good}/reply_images','GoodsController@replyImageIndex')
                 ->name('replies.images.index');
 
+            Route::get('goods/{good}/skus','GoodsController@skus')
+                ->name('goods.good.skus');
+
             //获取单个商品评论
             Route::get('goods/{good}/replies','GoodsController@replyIndex')
                 ->name('good.replies');
@@ -72,8 +75,6 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             Route::post('goods/search','GoodsController@index')
                 ->name('goods.search,index');
 
-            Route::get('goods/{good}/skus', 'GoodsController@skus')
-                ->name('good.skus');
             Route::get('gps_basic_data','GpsBasicDataController@index')
                 ->name('gps_basic_data.index');
 
