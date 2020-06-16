@@ -19,7 +19,7 @@ class CartItem extends Model
         return $this->belongsTo(Good::class);
     }
 
-    public function goodSku()
+    public function sku()
     {
         return $this->belongsTo(GoodSku::class);
     }
