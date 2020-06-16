@@ -89,7 +89,6 @@ class OrdersController extends Controller
                         abort(403, $sku->good->title . '库存为零');
                     }
 
-                    dd($sku_id);
                     // 创建一个 OrderItem 并直接与当前订单关联
                     $item = $order->items()->make([
                         'amount' => $amount = $user->cartItems()->where('sku_id', $sku_id)->first()->amount,
