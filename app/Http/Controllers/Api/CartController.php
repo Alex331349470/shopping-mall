@@ -34,19 +34,29 @@ class CartController extends Controller
         $goodId = $request->good_id;
         $amount = $request->amount;
 
+        if ($request->sku_id) {
+            $skuId = $request->sku->id;
+        }
+
         if (($cart = $user->cartItems()->where('good_id',$goodId)->first()) && ($request->cartExist == false)) {
+
             $cart->update([
                 'amount' => $cart->amount + $amount,
             ]);
+
         } elseif (($cart = $user->cartItems()->where('good_id',$goodId)->first()) && ($request->cartExist == true)) {
+
             $cart->update([
                 'amount' => $amount,
             ]);
+
         }else{
+
             $cart = new CartItem(['amount' => $amount]);
             $cart->user()->associate($user);
             $cart->good()->associate($goodId);
             $cart->save();
+
         }
 
         return response(null,201);

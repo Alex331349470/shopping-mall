@@ -75,12 +75,12 @@ class GoodsController extends Controller
         return response(null,201);
     }
 
-    public function skus(Good $good)
-    {
-        $skus = GoodSku::query()->where('good_id',$good->id)->get();
-        GoodSkuResource::wrap('data');
-        return new GoodSkuResource($skus);
-    }
+//    public function skus(Good $good)
+//    {
+//        $skus = GoodSku::query()->where('good_id',$good->id)->get();
+//        GoodSkuResource::wrap('data');
+//        return new GoodSkuResource($skus);
+//    }
 
     public function disfavor(Good $good,Request $request)
     {
