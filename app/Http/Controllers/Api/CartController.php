@@ -14,7 +14,7 @@ class CartController extends Controller
     //当前用户购物车信息
     public function index(Request $request)
     {
-        $cartItems = $request->user()->cartItems()->with('user','good.images')->get();
+        $cartItems = $request->user()->cartItems()->with('user','good.images','sku')->get();
         //统一resource机制
         CartItemResource::wrap('data');
         return new CartItemResource($cartItems);
