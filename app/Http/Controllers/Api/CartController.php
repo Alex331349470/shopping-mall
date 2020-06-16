@@ -48,7 +48,7 @@ class CartController extends Controller
                 $cart = new CartItem(['amount' => $amount]);
                 $cart->user()->associate($user);
                 $cart->good()->associate($goodId);
-                $cart->goodSku()->associate($skuId);
+//                $cart->goodSku()->associate($skuId);
                 $cart->save();
             }
 
