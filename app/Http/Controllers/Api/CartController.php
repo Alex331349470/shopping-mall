@@ -36,11 +36,11 @@ class CartController extends Controller
         
         if ($request->sku_id) {
             $skuId = $request->sku_id;
-            if (($cart = $user->cartItems()->where('sku_id',$skuId)->first()) && ($request->cartExist = false)) {
+            if (($cart = $user->cartItems()->where('good_id',$goodId)->where('sku_id',$skuId)->first()) && ($request->cartExist = false)) {
                 $cart->update([
                     'amount' => $cart->amount + $amount,
                 ]);
-            } elseif(($cart = $user->cartItems()->where('sku_id',$skuId)->first()) && ($request->cartExist == true)) {
+            } elseif(($cart = $user->cartItems()->where('good_id',$goodId)->where('sku_id',$skuId)->first()) && ($request->cartExist == true)) {
                 $cart->update([
                     'amount' => $amount,
                 ]);
