@@ -96,7 +96,7 @@ class OrdersController extends Controller
                     ]);
 
                     $item->good()->associate($sku->good);
-
+                    $item->sku()->associcate($sku);
                     $item->save();
                     $totalAmount += $sku->price * $amount;
                     $totalWeight += $sku->good->weight * $amount;
