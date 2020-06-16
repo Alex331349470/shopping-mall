@@ -15,7 +15,10 @@ class OrderItem extends Model
         return $this->belongsTo(Good::class);
     }
 
-
+    public function sku()
+    {
+        return $this->belongsTo(GoodSku::class);
+    }
     public function order()
     {
         return $this->belongsTo(Order::class);

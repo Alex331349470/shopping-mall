@@ -38,7 +38,6 @@ return array(
     'App\\Http\\Controllers\\Api\\CategoriesController' => $baseDir . '/app/Http/Controllers/Api/CategoriesController.php',
     'App\\Http\\Controllers\\Api\\Controller' => $baseDir . '/app/Http/Controllers/Api/Controller.php',
     'App\\Http\\Controllers\\Api\\CouponsController' => $baseDir . '/app/Http/Controllers/Api/CouponsController.php',
-    'App\\Http\\Controllers\\Api\\GoodSkusController' => $baseDir . '/app/Http/Controllers/Api/GoodSkusController.php',
     'App\\Http\\Controllers\\Api\\GoodsController' => $baseDir . '/app/Http/Controllers/Api/GoodsController.php',
     'App\\Http\\Controllers\\Api\\GpsBasicDataController' => $baseDir . '/app/Http/Controllers/Api/GpsBasicDataController.php',
     'App\\Http\\Controllers\\Api\\ImagesController' => $baseDir . '/app/Http/Controllers/Api/ImagesController.php',

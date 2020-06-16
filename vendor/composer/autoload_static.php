@@ -751,7 +751,6 @@ class ComposerStaticInit36704ecd9d1ada253db9f5b0f71bcff6
         'App\\Http\\Controllers\\Api\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CategoriesController.php',
         'App\\Http\\Controllers\\Api\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Controller.php',
         'App\\Http\\Controllers\\Api\\CouponsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CouponsController.php',
-        'App\\Http\\Controllers\\Api\\GoodSkusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/GoodSkusController.php',
         'App\\Http\\Controllers\\Api\\GoodsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/GoodsController.php',
         'App\\Http\\Controllers\\Api\\GpsBasicDataController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/GpsBasicDataController.php',
         'App\\Http\\Controllers\\Api\\ImagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ImagesController.php',
