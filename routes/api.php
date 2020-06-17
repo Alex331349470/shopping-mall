@@ -58,6 +58,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function () {
             //获取单个id商品详情
             Route::get('goods', 'GoodsController@hotIndex')
                 ->name('good.hotIndex');
+
+            Route::get('goods/brand','GoodsController@brandIndex')
+                ->name('goods.brandIndex');
             //获取轮播图以及url
             Route::get('ads','AdsController@index')
                 ->name('ads.index');

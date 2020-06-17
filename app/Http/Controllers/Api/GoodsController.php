@@ -62,6 +62,17 @@ class GoodsController extends Controller
         return new GoodResource($goods);
     }
 
+    public function brandIndex(Request $request)
+    {
+//        $goods = Good::query()->where('on_sale',true)->with('images','category')->whereorderBy('brand')->get();
+        $goods = \DB::table('goods')->where('on_sale', true)->whereIn('id',[222,49,70,17])->orderBy('price','desc')->get();
+        if (!$goods) {
+            abort(403, '没有商品');
+        }
+
+        return new GoodResource($goods);
+    }
+
     public function favor(Good $good, Request $request)
     {
         $user = $request->user();
