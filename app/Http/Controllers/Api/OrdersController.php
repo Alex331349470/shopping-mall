@@ -19,8 +19,7 @@ class OrdersController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::where('user_id', $request->user()->id)->with('user', 'items.good.images', 'items.good.category','items.sku')->orderBy('created_at', 'desc')->get();
-
+        $orders = Order::where('user_id', $request->user()->id)->with('user', 'items.good.images', 'items.good.category', 'items.sku')->orderBy('created_at', 'desc')->get();
 
         OrderResource::wrap('data');
 
@@ -48,8 +47,8 @@ class OrdersController extends Controller
         $good_ids = explode(',', $request->good_ids);
 
         if ($request->sku_ids) {
-            $sku_ids = explode(',',$request->sku_ids);
-            $order = DB::transaction(function () use ($user, $request, $sku_ids) {
+            $sku_ids = explode(',', $request->sku_ids);
+            $order = DB::transaction(function () use ($user, $request, $sku_ids, $good_ids) {
                 $address = UserAddress::find($request->address_id);
 
                 $order = new Order([
@@ -73,8 +72,10 @@ class OrdersController extends Controller
                 }
                 // 写入数据库
                 $order->save();
-                $totalAmount = 0;
-                $totalWeight = 0.00;
+                $totalSkuAmount = 0;
+                $totalSkuWeight = 0.00;
+                $totalNullSkuAmount = 0;
+                $totalNullSkuWeight = 0.00;
 
                 foreach ($sku_ids as $sku_id) {
                     if (!$sku = GoodSku::find($sku_id)) {
@@ -98,13 +99,47 @@ class OrdersController extends Controller
                     $item->good()->associate($sku->good);
                     $item->sku()->associate($sku);
                     $item->save();
-                    $totalAmount += $sku->price * $amount;
-                    $totalWeight += $sku->good->weight * $amount;
+                    $totalSkuAmount += $sku->price * $amount;
+                    $totalSkuWeight += $sku->good->weight * $amount;
 
                     if ($sku->decreaseStock($amount) <= 0) {
                         abort(403, '该商品库存不足');
                     }
                 }
+
+                foreach ($good_ids as $good_id) {
+                    if (!$good_sku = GoodSku::where('good_id',$good_id)->first()) {
+                        if (!$good = Good::find($good_id)) {
+                            abort(403, '不存在ID为' . $good_id . '的商品');
+                        }
+
+                        if (!$good->on_sale) {
+                            abort(403, $good->title . '未上架');
+                        }
+
+                        if ($good->stock === 0) {
+                            abort(403, $good->title . '库存为零');
+                        }
+
+                        // 创建一个 OrderItem 并直接与当前订单关联
+                        $item = $order->items()->make([
+                            'amount' => $amount = $user->cartItems()->where('good_id', $good_id)->whereNull('sku_id')->first()->amount,
+                            'price' => $good->price,
+                        ]);
+                        $item->good()->associate($good);
+
+                        $item->save();
+                        $totalNullSkuAmount += $good->price * $amount;
+                        $totalNullSkuWeight += $good->weight * $amount;
+
+                        if ($good->decreaseStock($amount) <= 0) {
+                            abort(403, '该商品库存不足');
+                        }
+                    }
+                }
+
+                $totalAmount = $totalSkuAmount + $totalNullSkuAmount;
+                $totalWeight = $totalSkuWeight + $totalNullSkuWeight;
 
                 if ($totalAmount >= 88) {
                     $order->update(['ship_price' => 0]);
@@ -128,7 +163,7 @@ class OrdersController extends Controller
                 $order->update(['total_amount' => $totalAmount]);
 
                 // 将下单的商品从购物车中移除
-                $user->cartItems()->whereIn('sku_id', $sku_ids)->delete();
+                $user->cartItems()->whereIn('good_id', $good_ids)->delete();
                 $this->dispatch(new CloseOrder($order, config('app.order_ttl')));
                 return $order;
             });
