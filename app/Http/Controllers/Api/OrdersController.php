@@ -50,7 +50,9 @@ class OrdersController extends Controller
             $sku_ids = explode(',', $request->sku_ids);
             $order = DB::transaction(function () use ($user, $request, $sku_ids, $good_ids) {
                 $address = UserAddress::find($request->address_id);
-
+                if (!$address) {
+                    abort(403,'地址未添加');
+                }
                 $order = new Order([
                     'address' => [ // 将地址信息放入订单中
                         'address' => $address->full_address,
@@ -174,6 +176,11 @@ class OrdersController extends Controller
         $order = DB::transaction(function () use ($user, $request, $good_ids) {
 
             $address = UserAddress::find($request->address_id);
+
+            if (!$address) {
+                abort(403,'地址未添加');
+            }
+            
             // 创建一个订单
             $order = new Order([
                 'address' => [ // 将地址信息放入订单中
