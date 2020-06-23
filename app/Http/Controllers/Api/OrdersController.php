@@ -51,7 +51,7 @@ class OrdersController extends Controller
             $order = DB::transaction(function () use ($user, $request, $sku_ids, $good_ids) {
                 $address = UserAddress::find($request->address_id);
                 if (!$address) {
-                    abort(403,'地址未添加');
+                    abort(403, '地址未添加');
                 }
                 $order = new Order([
                     'address' => [ // 将地址信息放入订单中
@@ -110,7 +110,7 @@ class OrdersController extends Controller
                 }
 
                 foreach ($good_ids as $good_id) {
-                    if (!$good_sku = GoodSku::where('good_id',$good_id)->first()) {
+                    if (!$good_sku = GoodSku::where('good_id', $good_id)->first()) {
                         if (!$good = Good::find($good_id)) {
                             abort(403, '不存在ID为' . $good_id . '的商品');
                         }
@@ -145,10 +145,10 @@ class OrdersController extends Controller
 
                 if ($totalAmount >= 88) {
                     $order->update(['ship_price' => 0]);
-                } else if ($totalAmount < 88 && $totalWeight <= 5) {
+                } elseif ($totalAmount < 88 && $totalWeight <= 5) {
                     $order->update(['ship_price' => 6]);
                     $totalAmount += 6;
-                } else if ($totalAmount < 88 && $totalWeight > 5) {
+                } elseif ($totalAmount < 88 && $totalWeight > 5) {
                     $ship_price = $totalWeight + 1;
                     $order->update(['ship_price' => $ship_price]);
                     $totalAmount += $ship_price;
@@ -174,13 +174,12 @@ class OrdersController extends Controller
         }
 
         $order = DB::transaction(function () use ($user, $request, $good_ids) {
-
             $address = UserAddress::find($request->address_id);
 
             if (!$address) {
-                abort(403,'地址未添加');
+                abort(403, '地址未添加');
             }
-            
+
             // 创建一个订单
             $order = new Order([
                 'address' => [ // 将地址信息放入订单中
@@ -237,10 +236,10 @@ class OrdersController extends Controller
 
             if ($totalAmount >= 88) {
                 $order->update(['ship_price' => 0]);
-            } else if ($totalAmount < 88 && $totalWeight <= 5) {
+            } elseif ($totalAmount < 88 && $totalWeight <= 5) {
                 $order->update(['ship_price' => 6]);
                 $totalAmount += 6;
-            } else if ($totalAmount < 88 && $totalWeight > 5) {
+            } elseif ($totalAmount < 88 && $totalWeight > 5) {
                 $ship_price = $totalWeight + 1;
                 $order->update(['ship_price' => $ship_price]);
                 $totalAmount += $ship_price;
@@ -322,7 +321,6 @@ class OrdersController extends Controller
     public function wechatMessage(Order $order)
     {
         if ($order->paid_at) {
-
             return response()->json([
                 '1' => '订单已支付'
             ])->setStatusCode(200);
@@ -358,6 +356,4 @@ class OrdersController extends Controller
 
         return new OrderResource($order);
     }
-
-
 }

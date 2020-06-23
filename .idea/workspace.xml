@@ -162,7 +162,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Admin/Controllers/wx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -172,7 +172,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -356,7 +356,17 @@
       <workItem from="1592384093318" duration="617000" />
       <workItem from="1592390680741" duration="305000" />
       <workItem from="1592393553989" duration="1879000" />
-      <workItem from="1592520860784" duration="3293000" />
+      <workItem from="1592520860784" duration="3804000" />
+      <workItem from="1592531990425" duration="1236000" />
+      <workItem from="1592550538650" duration="403000" />
+      <workItem from="1592557519370" duration="41000" />
+      <workItem from="1592558146175" duration="61000" />
+      <workItem from="1592581453902" duration="189000" />
+      <workItem from="1592620766121" duration="381000" />
+      <workItem from="1592621168428" duration="494000" />
+      <workItem from="1592645816334" duration="420000" />
+      <workItem from="1592806780420" duration="1643000" />
+      <workItem from="1592916278806" duration="838000" />
     </task>
     <servers />
   </component>
