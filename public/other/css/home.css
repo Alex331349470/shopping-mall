@@ -1,0 +1,123 @@
+@charset "gb2312";
+/* 幻灯片 */
+.icon-arrow-a-left, .icon-arrow-a-right { background: url(../images/icon-sd26986d847.png) no-repeat; }
+.icon-arrow-a-left { background-position: 0 0; height: 50px; width: 50px; }
+.icon-arrow-a-left:hover, .icon-arrow-a-left.arrow-a-left_hover, .icon-arrow-a-left.arrow-a-left-hover { background-position: -60px 0; }
+.icon-arrow-a-right { background-position: -120px 0; height: 50px; width: 50px; }
+.icon-arrow-a-right:hover, .icon-arrow-a-right.arrow-a-right_hover, .icon-arrow-a-right.arrow-a-right-hover { background-position: -180px 0; }
+#mainfoucs { overflow: hidden; zoom: 1; position: relative; }
+#index_b_hero { width: 960px; height: 410px; margin: auto; position: relative; }
+#index_b_hero img { width: 950px; height: 400px; }
+#index_b_hero .heros { width: 960px; height: 410px; }
+#index_b_hero .hero-wrap { overflow: visible; position: absolute; }
+#index_b_hero .next, #index_b_hero .prev { filter: alpha(Opacity=70); opacity: .7; position: absolute; top: 50%; margin-top: -25px; margin-left: 5px; background-color: #303030; z-index: 3; }
+#index_b_hero .next:hover, #index_b_hero .prev:hover { background-color: orangered; }
+#index_b_hero .next { margin: -25px 5px 0 0; right: 0; }
+#index_b_hero .disabled { background-color: #eee; }
+#index_b_hero .mask-left, #index_b_hero .mask-right, #index_b_hero .hero { background: #fff; padding: 5px; z-index: 1; position: absolute; top: 0; left: 0; width: 950px; height: 400px; overflow: hidden; left: 1920px; }
+#index_b_hero .mask-right, #index_b_hero .mask-left { z-index: 4; left: -960px; filter: alpha(Opacity=50); opacity: .5; background: #fff; overflow: hidden; }
+#index_b_hero .mask-right { left: 960px; }
+#index_b_hero .active { z-index: 2; left: 0; }
+.w960 { width: 1000px; margin: 0 auto; }
+/*标题*//*-标题默认动画-*/
+.about_title { text-align: center; }
+.eng { display: block; text-transform: uppercase; font-size: 40px; line-height: 40px; padding-top: 50px }
+.about_title h2 { font-size: 28px; line-height: 28px; font-weight: normal; color: #000; margin-bottom: 30px }
+.short_line { width: 128px; height: 1px; display: block; background: #EDAC29; margin: 20px auto; }
+.about { background: #367A86; overflow: hidden; width: 100% }
+.active .title { top: 0; opacity: 1; transition-delay: 0.25s; transition-duration: 1.25s }
+/*--关于我们--*/
+.our_introduct { overflow: hidden }
+.our_introduct li { float: left; width: 465px; height: 134px; margin-bottom: 30px; background: #F4F3EC; transition: left 0.25s, right 0.25s, opacity 0.25s; overflow: hidden }
+.our_introduct li:nth-child(1) { left: -20px; }
+.our_introduct li:nth-child(3) { left: -20px; }
+.our_introduct li:nth-child(2) { right: -40px; }
+.our_introduct li:nth-child(4) { right: -40px; }
+.our_introduct li.oi_right { margin-right: 30px; }
+.oi_msg { width: 330px; margin: 15px; }
+.oi_msg h3 { font-size: 22px; height: 56px; line-height: 28px; }
+.oi_msg h3 span { display: block; text-transform: uppercase; }
+.oi_msg p { font-size: 14px; line-height: 24px; height: 48px; color: #888; overflow: hidden; }
+.oi_right .oi_msg { text-align: right; }
+.oi_icon { width: 54px; height: 100%; background: #212526; transition: all 0.25s; }
+.oi_icon span { display: block; width: 16px; height: 16px; margin: 59px auto; background: url(../images/about_icon.png) top left no-repeat; }
+#hono { background-position: 0 -16px; }
+#crea { background-position: 0 -32px; }
+#baza { background-position: 0 -48px; }
+.our_introduct li:hover { background: #fff; }
+.our_introduct li:hover .oi_icon { width: 72px; background: #EDAC29; }
+/*--作品展示--*/
+.works { background: #626262; background-size: 100% 100%; overflow: hidden; padding-bottom: 50px }
+.cw .eng, .cw .eng a, .cw h2, .cw h2 a { color: #fff; }
+#outer { margin: 10px auto; width: 1000px; overflow: hidden }
+#tab { overflow: hidden; width: 600px; margin: auto; color: #fff }
+#tab li { float: left; height: 40px; cursor: pointer; line-height: 40px; padding: 0 40px; border-radius: 5px; font-size: 14px }
+#tab li a { color: #fff }
+#tab li.current { color: #fff; background: #EDAC29; }
+#tab li.current a { color: #fff; background: #EDAC29; }
+#content { width: 1000px }
+#content ul { display: none; text-align: center; margin: 30px auto; }
+#content ul li { float: left; margin: 10px; position: relative; width: 220px; overflow: hidden; }
+#content ul li span { position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.8); width: 100%; line-height: 30px; color: #FFF }
+#content ul img { display: block; margin: auto; height: 220px; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s; }
+#content ul img:hover { opacity: 0.5 }
+/*--服务范围--*/
+.services { background: #FFF; background-size: 100% 100%; padding-bottom: 50px }
+.services_list li { float: left; width: 25%; height: 160px; margin-bottom: 15px; text-align: center; }
+.services_box { margin: 25px; }
+.services_pic { padding: 25px 0; height: 40px; text-align: center; transition: all 0.3s; }
+.services_pic img { height: 100%; width: auto; transition: all 0.3s; }
+.services_box { transition: all 0.3s; }
+.services_box h3 { font-size: 18px; }
+.services_box h3 a { transition: all 0.3s; }
+.services_box:hover h3 a { color: #6f4204; }
+.services_box:hover .services_pic { height: 66px; }
+.services_box:hover .services_pic img { }
+.active .services_list { opacity: 1; transition-delay: 1s; transition-duration: 1.2s; }
+/*-里程碑-*/
+.milepost { background: #626262; background-size: 100% 100%; padding-bottom: 50px }
+.milepost_list { position: relative; }
+.milepost_list li { float: left; margin: 0 20px; position: relative; width: 200px; overflow: hidden; }
+.milepost_list li a { cursor: default; }
+.milepost_pic { width: 200px; height: 160px; overflow: hidden; }
+.milepost_pic img { width: 100%; height: auto; }
+.milepost_cover { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: #fff; opacity: 0; transition: all 0.3s ease-in-out; }
+.milepost_name { position: absolute; top: 0; left: 0; z-index: 3; width: 200px; height: 160px; text-align: center; }
+.milepost_name span { display: block; padding-top: 50px; height: 60px; width: 100%; text-align: center; }
+.milepost_name span img { height: 60px; width: auto; margin: 0 auto; display: block; }
+.milepost_name h3 { font-size: 20px; line-height: 48px; color: #EDAC29; }
+.milepost_number { font-size: 20px; line-height: 36px; height: 36px; text-align: center; padding: 10px; background: url(../images/b7.png) repeat; margin-top: 15px; overflow: hidden; }
+.milepost_number span { position: relative; z-index: 3; transition: all 0.3s; color: #fff; }
+.milepost_list li a:hover .milepost_cover { opacity: 0.8; }
+.milepost_list li a:hover .milepost_number span { color: #666; }
+.active .milepost_list { opacity: 1; left: 0; transition-delay: 0.7s; transition-duration: 1.2s; }
+/*-团队-*/
+.team { background: #FFF; background-size: 100% 100%; padding-bottom: 50px }
+#outer1 { margin: 10px auto; width: 1000px; overflow: hidden }
+#tab1 { overflow: hidden; width: 290px; margin: auto; color: #fff }
+#tab1 li { float: left; height: 40px; cursor: pointer; line-height: 40px; padding: 0 40px; border-radius: 5px; font-size: 14px; background: #000; }
+#tab1 li a { color: #fff }
+#tab1 li.current1 { color: #fff; background: #EDAC29; }
+#tab1 li.current1 a { color: #fff; background: #EDAC29; }
+#content1 { width: 1000px }
+#content1 ul { display: none; text-align: center; margin: 30px auto; }
+#content1 ul li { float: left; overflow: hidden; margin: 0 20px; }
+#content1 ul img { display: block; margin: auto; height: 150px; width: 150px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; border-radius: 50%; }
+#content1 ul img:hover { border-radius: 0; }
+/*-news-*/
+.news { background: #618AA3; background-size: 100% 100%; padding-bottom: 50px }
+.articles { margin: 0 auto 20px; width: 1000px; overflow: hidden; }
+.articles dl { display: block; overflow: hidden; margin-bottom: 12px; width: 470px; background: #f1f1f1; padding: 10px; float: left; margin: 0 10px 10px 0 }
+.articles dd { line-height: 20px; margin-top: 15px }
+.articles dt { float: left; position: relative; width: 180px; height: 130px; overflow: hidden; margin-right: 15px; }
+.articles dt img { width: 180px; height: 130px; }
+.articles dt i { position: absolute; background: rgba(255,204,0,0.8); width: 70px; height: 36px; display: block; top: 0; line-height: 36px; text-align: center; color: #FFF; font-style: normal }
+.ctitle { font-size: 16px; }
+.ctitle a { color: #000 }
+.articles dl:hover { background: #ccc }
+.pp { background: #E9E9E9 }
+.pp ul { width: 770px; margin: auto; overflow: hidden; padding: 0 0 40px 230px; background: url(../images/brandT.jpg) no-repeat left top }
+.pp ul li { float: right; height: 78px; width: 120px; margin-left: 8px; margin-bottom: 7px; }
+.pp ul li img { height: 78px; width: 120px; }
+.pp section { width: 1000px; margin: auto }
+.pp section img { margin: auto; width: 1000px }

@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>企业网站模板</title>
+<meta name="keywords" content="企业网站模板,装修公司企业网站模板，企业静态网站页面模板" />
+<meta name="description" content="企业网站模板" />
+<link href="css/home.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.foucs.js" type="text/javascript"></script>
+<script src="js/index0.js" type="text/javascript"></script>
+</head>
+<body>
+<header id="r_ad">
+  <div class="htop">
+    <div class="logo left"> <a href="/"><img src="images/logo.png"></a> </div>
+    <nav id="topnav" class="right">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="#about_us">关于我们</a></li>
+        <li><a href="#works">产品展示</a></li>
+        <li><a href="#services">服务范围</a></li>
+        <li><a href="#milepost">案例分享</a></li>
+        <li><a href="#team">团队展示</a></li>
+        <li><a href="#news">新闻资讯</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+      <script type="text/javascript">
+jQuery(function() { 
+    var elm = jQuery('#r_ad'); 
+    var startPos = jQuery(elm).offset().top; 
+    jQuery.event.add(window, "scroll", function() { 
+        var p = jQuery(window).scrollTop(); 
+        jQuery(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+        jQuery(elm).css('top',((p) > startPos) ? '0px' : '');
+		jQuery(elm).css('box-shadow',((p) > startPos) ? '0px 3px 5px #ccc' : '');
+		jQuery(elm).css('opacity',((p) > startPos) ? '0.9' : ''); 
+		jQuery(elm).css('z-index',((p) > startPos) ? '999' : '');
+    }); 
+}); 
+</script> 
+    </nav>
+  </div>
+</header>
+
+<!-- mainfoucs 代码 开始 -->
+<div id="mainfoucs">
+  <div id="index_b_hero">
+    <div class="hero-wrap">
+      <ul class="heros clearfix">
+        <li class="hero"> <a href="/" target="_blank" title="第一张图的说明"> <img src="images/h0.jpg" class="thumb" alt="" /> </a> </li>
+        <li class="hero"> <a href="/" target="_blank" title="第二张图的说明"> <img src="images/h1.jpg" class="thumb" alt="" /> </a> </li>
+        <li class="hero"> <a href="/" target="_blank" title="第三张图的说明"> <img src="images/h2.jpg" class="thumb" alt="" /> </a> </li>
+        <li class="hero"> <a href="/" target="_blank" title="第4张图的说明"> <img src="images/h4.jpg" class="thumb" alt="" /> </a> </li>
+      </ul>
+    </div>
+    <div class="helper">
+      <div class="mask-left"> </div>
+      <div class="mask-right"> </div>
+      <a href="#" class="prev icon-arrow-a-left"></a> <a href="#" class="next icon-arrow-a-right"></a> </div>
+  </div>
+</div>
+<script type="text/javascript">
+        $.foucs({ direction: 'right' });
+</script> 
+<!-- 代码 结束 -->
+
+<div class="about cw" id="about_us">
+  <div class="about_title">
+    <p class="eng">ABOUT</p>
+    <span class="short_line"></span>
+    <h2>关于我们</h2>
+  </div>
+  <ul class="our_introduct w960 cl">
+    <li class="oi_right"> <a href="" class="cl" target="_blank">
+      <div class="left oi_msg">
+        <h3><span>INTRODUCTION</span>企业简介</h3>
+        <p>十年风雨驰名四海，我们锲而不舍的刻画每一个空间的繁华印记</p>
+      </div>
+      <div class="right oi_icon"><span id="intr"></span></div>
+      </a> </li>
+    <li> <a href="" class="cl" target="_blank">
+      <div class="left oi_icon"><span id="hono"></span></div>
+      <div class="right oi_msg">
+        <h3><span>HONOR</span>荣誉资质</h3>
+        <p>空间创意一马当先，我们坚持不懈的追求每一个设计的全新高度</p>
+      </div>
+      </a> </li>
+    <li class="oi_right"> <a href="" class="cl" target="_blank">
+      <div class="left oi_msg">
+        <h3><span>CONTAC US</span>联系我们</h3>
+        <p>源远流长的创意之源，我们始终如一在这里挥洒着无限创意</p>
+      </div>
+      <div class="right oi_icon"><span id="crea"></span></div>
+      </a> </li>
+    <li> <a href="" class="cl" target="_blank">
+      <div class="left oi_icon"><span id="baza"></span></div>
+      <div class="right oi_msg">
+        <h3><span>CREATIVE,BAZAAAR</span>优势创意</h3>
+        <p>饰以方圆品味方寸，我们持之以恒地探索每一个形态的无限可能</p>
+      </div>
+      </a> </li>
+  </ul>
+</div>
+<div class="works cw" id="works">
+  <div class="about_title">
+    <p class="eng">show</p>
+    <span class="short_line"></span>
+    <h2>作品展示</h2>
+  </div>
+  <div id="outer">
+    <ul id="tab">
+      <li class="current">室内外装饰</li>
+      <li>墙体彩绘</li>
+      <li>钢结构</li>
+      <li>施工</li>
+    </ul>
+    <div id="content">
+      <ul  style="display:block;" class="pics">
+        <li><a href="/"><img src="images/2.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/3.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/1.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/4.jpg"><span>东南亚风格</span></a></li>
+      </ul>
+      <ul>
+        <li><a href="/"><img src="images/5.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/6.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/7.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/8.jpg"><span>东南亚风格</span></a></li>
+      </ul>
+      <ul>
+        <li><a href="/"><img src="images/9.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/10.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/2.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/4.jpg"><span>东南亚风格</span></a></li>
+      </ul>
+      <ul>
+        <li><a href="/"><img src="images/1.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/2.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/3.jpg"><span>东南亚风格</span></a></li>
+        <li><a href="/"><img src="images/4.jpg"><span>东南亚风格</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="services" id="services">
+  <div class="about_title">
+    <p class="eng">Service Scope</p>
+    <span class="short_line"></span>
+    <h2>服务范围</h2>
+  </div>
+  <ul class="services_list mt60 w960 cl">
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710hvwR7.png" width="66" height="66" alt="室内外装饰工程"></div>
+        <h3>室内外装饰工程</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710zFuWF.png" width="66" height="66" alt="园林绿化的设计及施工"></div>
+        <h3>园林绿化的设计及施工</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710tmqkm.png" width="66" height="66" alt="环境艺术设计"></div>
+        <h3>环境艺术设计</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710Zh4bW.png" width="66" height="66" alt="建筑外墙翻新设计"></div>
+        <h3>建筑外墙翻新设计</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710b0EN9.png" width="66" height="66" alt="墙体艺术绘画"></div>
+        <h3>墙体艺术绘画</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710nZ066.png" width="66" height="66" alt="展览展示设计及施工"></div>
+        <h3>展览展示设计及施工</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/20150710JqOZk.png" width="66" height="66" alt="花卉铺设"></div>
+        <h3>花卉铺设</h3>
+      </div>
+    </li>
+    <li>
+      <div class="services_box">
+        <div class="services_pic"><img src="images/175708o4Gzg.png" width="66" height="66" alt="钢结构工程"></div>
+        <h3>钢结构工程</h3>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="milepost cw" id="milepost">
+  <div class="about_title">
+    <p class="eng">Our Milepost</p>
+    <span class="short_line"></span>
+    <h2>里程碑</h2>
+  </div>
+  <ul class="milepost_list w960 cl">
+    <li> <a href="javascript:void(0)">
+      <div class="milepost_pic"><img src="images/20150710EaWzY.jpg@200w_160h_1e_1c.jpg" width="200" height="160"></div>
+      <div class="milepost_cover"></div>
+      <div class="milepost_name"> <span><img src="images/20150710kcN7e.png@200w_160h_1e_1c.png" width="66" height="66" alt="设计制作"></span>
+        <h3>设计制作</h3>
+      </div>
+      <div class="milepost_number"><span>8000+个方案</span></div>
+      </a> </li>
+    <li> <a href="javascript:void(0)">
+      <div class="milepost_pic"><img src="images/20150710yEbGS.jpg@200w_160h_1e_1c.jpg" width="200" height="160"></div>
+      <div class="milepost_cover"></div>
+      <div class="milepost_name"> <span><img src="images/20150710eHh25.png@200w_160h_1e_1c.png" width="66" height="66" alt="足迹覆盖"></span>
+        <h3>足迹覆盖</h3>
+      </div>
+      <div class="milepost_number"><span>136个城市</span></div>
+      </a> </li>
+    <li> <a href="javascript:void(0)">
+      <div class="milepost_pic"><img src="images/20150710vPXTp.jpg@200w_160h_1e_1c.jpg" width="200" height="160"></div>
+      <div class="milepost_cover"></div>
+      <div class="milepost_name"> <span><img src="images/20150710YvvKv.png@200w_160h_1e_1c.png" width="66" height="66" alt="满意客户"></span>
+        <h3>满意客户</h3>
+      </div>
+      <div class="milepost_number"><span>18550人</span></div>
+      </a> </li>
+    <li> <a href="javascript:void(0)">
+      <div class="milepost_pic"><img src="images/20150710bU3wu.jpg@200w_160h_1e_1c.jpg" width="200" height="160"></div>
+      <div class="milepost_cover"></div>
+      <div class="milepost_name"> <span><img src="images/20150710JH6vh.png@200w_160h_1e_1c.png" width="66" height="66" alt="伴您走过"></span>
+        <h3>伴您走过</h3>
+      </div>
+      <div class="milepost_number"><span>3000+个日夜</span></div>
+      </a> </li>
+  </ul>
+</div>
+<div class="team" id="team">
+  <div class="about_title">
+    <p class="eng">OUR TEAM</p>
+    <span class="short_line"></span>
+    <h2>团队成员</h2>
+  </div>
+  <div id="outer1">
+    <ul id="tab1">
+      <li class="current1">设计师团队</li>
+      <li>施工团队</li>
+    </ul>
+    <div id="content1">
+      <ul  style="display:block;" class="pics">
+        <li><a href="/"><img src="images/t02.jpg"></a></li>
+        <li><a href="/"><img src="images/t03.jpg"></a></li>
+        <li><a href="/"><img src="images/t01.jpg"></a></li>
+        <li><a href="/"><img src="images/t04.jpg"></a></li>
+        <li><a href="/"><img src="images/t05.jpg"></a></li>
+      </ul>
+      <ul>
+        <li><a href="/"><img src="images/t06.jpg"></a></li>
+        <li><a href="/"><img src="images/t07.jpg"></a></li>
+        <li><a href="/"><img src="images/t08.jpg"></a></li>
+        <li><a href="/"><img src="images/t09.jpg"></a></li>
+        <li><a href="/"><img src="images/t10.jpg"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="news cw" id="news">
+  <div class="about_title">
+    <p class="eng">NEWS CENTER</p>
+    <span class="short_line"></span>
+    <h2>新闻中心</h2>
+  </div>
+  <div class="articles">
+    <ul>
+      <dl>
+        <dt><img src="images/11.jpg"><i>嘉运星装饰</i></dt>
+        <dd class="ctitle"><a href="/">打造最好的客厅装修风水</a></dd>
+        <dd>房屋装修中，风水起着很重要的作用，客厅是体现一套房子整体风格的最佳场所，好的客厅风水既给全家人带来好运，又可以给客人留下好的印象...</dd>
+      </dl>
+      <dl>
+        <dt><img src="images/12.jpg"><i>嘉运星装饰</i></dt>
+        <dd class="ctitle"><a href="/">最旺运的儿童房风水</a></dd>
+        <dd><a href="/">睡觉占据着人生三分之一的时间。所以，拥有一个舒适的卧室是每个人的梦想。卧室，不仅是一个家里面最私密...</dd>
+      </dl>
+      <dl>
+        <dt><img src="images/13.jpg"><i>嘉运星装饰</i></dt>
+        <dd class="ctitle"><a href="/">爱家暖男的装修秘籍</a></dd>
+        <dd>新晋奶爸汪涵，不仅是著名的制片人兼主持，更是一个顾家的模范丈夫。作为一个极具魅力和才华的明星...</dd>
+      </dl>
+      <dl>
+        <dt><img src="images/14.jpg"><i>嘉运星装饰</i></dt>
+        <dd class="ctitle"><a href="/">打造宜居卧室</a></dd>
+        <dd>那么，我们该如何打造一个专属于自己的舒适卧室呢？下面土巴兔小编就为大家详细的介绍有关卧室的装修...</dd>
+      </dl>
+    </ul>
+  </div>
+</div>
+<div class="pp">
+  <div class="about_title">
+    <p class="eng">Brand</p>
+    <span class="short_line"></span>
+    <h2>主材品牌</h2>
+  </div>
+  <ul>
+    <li><img src="images/l01.jpg"></li>
+    <li><img src="images/l02.jpg"></li>
+    <li><img src="images/l03.jpg"></li>
+    <li><img src="images/l04.jpg"></li>
+    <li><img src="images/l05.jpg"></li>
+    <li><img src="images/l07.jpg"></li>
+    <li><img src="images/l08.jpg"></li>
+    <li><img src="images/l10.jpg"></li>
+    <li><img src="images/l11.jpg"></li>
+    <li><img src="images/l12.png"></li>
+    <li><img src="images/l13.png"></li>
+    <li><img src="images/l14.png"></li>
+  </ul>
+  <section> <img src="images/bottomImg.jpg"> </section>
+</div>
+<footer>
+  <div class="endfoot">
+    <div class="ft-info left">
+      <div class="ftlogo"><a href="#" target="_blank"><img src="images/logo.png"></a></div>
+    </div>
+    <div class="ft-list right">
+      <div class="ft-shares"> <a class="shares-sina" title="新浪微博" href="#" target="_blank"></a> <a class="shares-ten" title="腾讯微博" href="#" target="_blank"></a> <a class="shares-dib" href="#" target="_blank"></a> </div>
+      <div class="ft-nav"> <a href="#" target="_blank">关于我们</a> <a href="#" target="_blank">联系我们</a> <a href="#" target="_blank">版权声明</a> <a href="#" id="qaurl">问题反馈</a> <a href="#" target="_blank">商务合作</a> </div>
+      <p class="ft-copyright">Copyright 2015 技术支持：<a href="#" target="_blank">天津智尚互联科技有限公司</a> <a href="#" target="_blank">津ICP备15005751号-1</a></p>
+    </div>
+  </div>
+</footer>
+<div class="main-im">
+  <div id="open_im" class="open-im">&nbsp;</div>
+  <div class="im_main" id="im_main">
+    <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭">&nbsp;</a></div>
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1245848009&site=qq&menu=yes" target="_blank" class="im-qq qq-a" title="在线QQ客服">
+    <div class="qq-container"></div>
+    <div class="qq-hover-c"><img class="img-qq" src="images/qq.png"></div>
+    <span> QQ在线咨询</span> </a>
+    <div class="im-tel">
+      <div>手机咨询热线</div>
+      <div class="tel-num">13821728379</div>
+      <div>售后咨询热线</div>
+      <div class="tel-num">022-59323528</div>
+    </div>
+    <div class="im-footer" style="position:relative">
+      <div class="weixing-container">
+        <div class="weixing-show">
+          <div class="weixing-txt">微信扫一扫<br>
+            关注嘉运星装饰</div>
+          <img class="weixing-ma" src="images/ft-wx-s.png">
+          <div class="weixing-sanjiao"></div>
+          <div class="weixing-sanjiao-big"></div>
+        </div>
+      </div>
+      <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery.min.js"></script> 
+<script>
+$(function(){
+	$('#close_im').bind('click',function(){
+		$('#main-im').css("height","0");
+		$('#im_main').hide();
+		$('#open_im').show();
+	});
+	$('#open_im').bind('click',function(e){
+		$('#main-im').css("height","272");
+		$('#im_main').show();
+		$(this).hide();
+	});
+	$('.go-top').bind('click',function(){
+		$(window).scrollTop(0);
+	});
+	$(".weixing-container").bind('mouseenter',function(){
+		$('.weixing-show').show();
+	})
+	$(".weixing-container").bind('mouseleave',function(){        
+		$('.weixing-show').hide();
+	});
+});
+</script> 
+<!-- 代码部分 end-->
+</body>
+</html>
+

@@ -34,7 +34,7 @@
             </tr>
             @foreach($order->items as $item)
                 <tr>
-                    <td>{{ is_null($item->good)?'商品不存在':$item->good->title }}</td>
+                    <td>{{ is_null($item->good)?'商品不存在':$item->good->title }} {{is_null($item->sku)?'':("规格:" . $item->sku->title)}}</td>
                     <td>￥{{ $item->price }}</td>
                     <td>{{ $item->amount }}</td>
                 </tr>

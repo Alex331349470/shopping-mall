@@ -1,0 +1,54 @@
+@charset "gb2312";
+.menu_box { width: 260px; }
+.menu_box h2 { background: #222; padding: 20px 30px; font-size: 24px; line-height: 36px; color: #fff; font-weight: normal; text-align: center }
+.menu_box h2 span { display: block; font-size: 14px; line-height: 18px; }
+.news_menu li { line-height: 48px; border: 1px solid #dedede; margin-top: -1px; text-align: center }
+.news_menu li a { display: block; font-size: 14px; transition: all 0.25s; }
+.news_menu li.a a, .news_menu li a:hover { background: #258f81; color: #fff; }
+.newsbanner { background: url(../images/bannerbg.jpg) repeat-x #258f81; width: 100%; border-top: #fcd146 2px solid; height: 139px; text-align: center; color: #FFF;overflow: hidden; }
+.newsbanner img { margin: auto }
+.newsbanner p { font-size: 14px; margin: 10px 0 }
+.newsbanner p.ht1 { font-size: 24px; margin-top: 20px }
+.news_box { width: 710px }
+.nh1 { font-size: 24px; line-height: 36px; border-bottom: #258f81 2px solid; }
+.nh1 b { font-weight: normal }
+.nh1 span { float: right; font-size: 14px; color: #666; font-weight: normal }
+.nh1 span a { color: #666; margin: 0 5px }
+.nh1 span a:hover { color: #000 }
+.news_list { margin: 10px 0; overflow: hidden }
+.news_list li { font-size: 14px; line-height: 36px; padding: 5px 0; border-bottom: 1px dashed #dedede; }
+.news_list li span { float: right; color: #999; font-size: 12px; padding-right: 10px }
+.news_list li a { color: #333; display: block; transition: all 0.25s; padding-left: 10px }
+.news_list li a:hover { background: #f1f1f1; color: #428bca; }
+.hot_line { background: #F25717; text-align: center; color: #FFF; padding: 30px 0; margin: 20px 0; font-size: 18px; line-height: 36px }
+/* ·ÖÒ³ */
+.pagelist { text-align: center; color: #666; width: 100%; clear: both; margin: 20px 0; padding-top: 20px }
+.pagelist a { color: #666; margin: 0 2px;border: 1px solid #000; padding: 5px 10px;}
+.pagelist a:hover { color: #f00; text-decoration: underline }
+.pagelist > b { border: 1px solid #000;  padding: 5px 10px;}
+.about_content { line-height: 24px; font-size: 14px; padding: 20px }
+.about_content p { margin-bottom: 15px; text-indent: 2em }
+.about_content p img { margin: auto; display: block }
+.f_box { margin: 20px 0 }
+.a_title { text-align: center; font-size: 24px; font-weight: bold; color: #000; line-height: 50px }
+.p_title { text-align: center; font-size: 20px; color: #333; line-height: 50px; }
+.a_content { line-height: 28px; font-size: 14px; padding: 10px 30px; color: #333 }
+.a_content p { margin-bottom: 20px; text-indent: 2em; }
+.box_p { border: #ccc 1px dashed; text-align: center; padding: 5px 0; margin: 0 30px 10px 30px; color: #999; }
+.box_p a { color: #999 }
+.box_p span { margin: 0 10px }
+.nextinfos { font-size: 14px;margin: 10px 0 }
+.list_nav { margin-top: 10px; }
+.list_nav li { line-height: 36px; margin-bottom: 1px; font-size: 14px; }
+.list_nav li a { display: block; padding-left: 24px; background: #f1f1f1; border-left: 2px solid #444; -moz-transition: background 1s; transition: background 1s; -webkit-transition: background 1s; }
+.list_nav li.a a, .list_nav li a:hover { background: #444; color: #fff; }
+.contact_box { border: 1px solid #dedede; padding: 25px; width: 660px }
+.art_title { font-size: 24px; line-height: 48px; }
+.art_content { margin: 40px 0; font-size: 14px; line-height: 24px; }
+.art_content p { margin-bottom: 15px; text-indent: 2em }
+.pic_list { margin: 20px 0 }
+.pic_list li { width: 230px; height: 230px; float: left; display: inline-block; background: #CCC; position: relative; margin: 5px 2px 5px 4px; overflow: hidden }
+.pic_list li img { margin: auto; height: 230px; display: block; }
+.pic_list li span { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 30px; color: #FFF; background: rgba(0,0,0,0.5); text-align: center }
+.pic_list li:hover img { opacity: 0.8 }
+.pic_list li:hover span { background: #000 }
