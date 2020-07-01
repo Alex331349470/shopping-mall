@@ -53,7 +53,7 @@ class GoodsController extends Controller
     public function hotIndex(Request $request)
     {
 //        $goods = Good::query()->where('on_sale', true)->where('on_hot',true)->with('images','category')->paginate(6);
-        $goods = Good::query()->where('on_sale',true)->with('images','category')->orderBy('brand')->paginate(8);
+        $goods = Good::query()->where('on_sale',true)->where('stock','>',0)->with('images','category')->orderBy('brand')->paginate(8);
 
         if (!$goods) {
             abort(403, '没有商品');
@@ -65,7 +65,7 @@ class GoodsController extends Controller
     public function brandIndex(Request $request)
     {
 //        $goods = Good::query()->where('on_sale',true)->with('images','category')->whereorderBy('brand')->get();
-        $goods = Good::query()->where('on_sale', true)->with('images','category')->whereIn('id',[222,49,70,17])->orderBy('price','desc')->get();
+        $goods = Good::query()->where('on_sale', true)->where('stock','>',0)->with('images','category')->whereIn('id',[222,49,70,17])->orderBy('price','desc')->get();
         if (!$goods) {
             abort(403, '没有商品');
         }

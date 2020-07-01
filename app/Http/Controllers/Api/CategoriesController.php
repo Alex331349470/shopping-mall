@@ -33,7 +33,7 @@ class CategoriesController extends Controller
 
     public function goodIndex(Request $request, Category $category)
     {
-        $goods = $category->goods()->with('images', 'category')->where('on_sale',true)->orderBy('brand')->orderBy($request->attribute, $request->order)->get();
+        $goods = $category->goods()->with('images', 'category')->where('on_sale',true)->where('stock','>',0)->orderBy('brand')->orderBy($request->attribute, $request->order)->get();
         GoodResource::wrap('data');
 
         return new GoodResource($goods);
