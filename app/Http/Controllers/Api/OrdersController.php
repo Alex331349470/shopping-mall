@@ -81,7 +81,7 @@ class OrdersController extends Controller
 
                 foreach ($sku_ids as $sku_id) {
                     $sku = GoodSku::find($sku_id);
-                    dd($user->cartItems()->where('good_id',$sku->good_id)->first());
+                    dd($user->cartItems()->where('good_id',$sku->good_id)->first()->amount);
 //                    if (!$sku = GoodSku::find($sku_id)) {
 //                        abort(403, '不存在ID为' . $sku_id . '的商品');
 //                    }
