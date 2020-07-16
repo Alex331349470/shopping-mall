@@ -81,7 +81,6 @@ class OrdersController extends Controller
 
                 foreach ($sku_ids as $sku_id) {
                     $sku = GoodSku::find($sku_id);
-                    dd($user->cartItems()->where('good_id',$sku->good_id)->first()->amount);
 //                    if (!$sku = GoodSku::find($sku_id)) {
 //                        abort(403, '不存在ID为' . $sku_id . '的商品');
 //                    }
@@ -95,8 +94,9 @@ class OrdersController extends Controller
 //                    }
 
                     // 创建一个 OrderItem 并直接与当前订单关联
+                    $amount = $user->cartItems()->where('good_id',$sku->good_id)->amount;
                     $item = $order->items()->make([
-                        'amount' => $amount = $user->cartItems()->where('good_id',$sku->good_id)->first()->amount,
+                        'amount' => $amount,
                         'price' => $sku->price,
                     ]);
 
@@ -106,7 +106,7 @@ class OrdersController extends Controller
                     $totalSkuAmount += $sku->price * $amount;
                     $totalSkuWeight += $sku->good->weight * $amount;
 
-                    if ($sku->decreaseStock($amount) <= 0) {
+                    if ($sku->good->decreaseStock($amount) <= 0) {
                         abort(403, '该商品库存不足');
                     }
                 }
