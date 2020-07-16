@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/GoodsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +162,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -374,7 +373,17 @@
       <workItem from="1593434643395" duration="616000" />
       <workItem from="1593502468722" duration="794000" />
       <workItem from="1593523557069" duration="454000" />
-      <workItem from="1593610527395" duration="2673000" />
+      <workItem from="1593610527395" duration="3660000" />
+      <workItem from="1593658358360" duration="275000" />
+      <workItem from="1593744676963" duration="1703000" />
+      <workItem from="1593868918513" duration="601000" />
+      <workItem from="1594012334850" duration="599000" />
+      <workItem from="1594373080200" duration="862000" />
+      <workItem from="1594435704074" duration="534000" />
+      <workItem from="1594445623273" duration="582000" />
+      <workItem from="1594538763692" duration="322000" />
+      <workItem from="1594801890912" duration="284000" />
+      <workItem from="1594862034195" duration="1317000" />
     </task>
     <servers />
   </component>

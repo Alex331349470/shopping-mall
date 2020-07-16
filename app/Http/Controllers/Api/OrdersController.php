@@ -80,17 +80,18 @@ class OrdersController extends Controller
                 $totalNullSkuWeight = 0.00;
 
                 foreach ($sku_ids as $sku_id) {
-                    if (!$sku = GoodSku::find($sku_id)) {
-                        abort(403, '不存在ID为' . $sku_id . '的商品');
-                    }
-
-                    if (!$sku->good->on_sale) {
-                        abort(403, $sku->good->title . '未上架');
-                    }
-
-                    if ($sku->stock === 0) {
-                        abort(403, $sku->good->title . '库存为零');
-                    }
+                    $sku = GoodSku::find($sku_id);
+//                    if (!$sku = GoodSku::find($sku_id)) {
+//                        abort(403, '不存在ID为' . $sku_id . '的商品');
+//                    }
+//
+//                    if (!$sku->good->on_sale) {
+//                        abort(403, $sku->good->title . '未上架');
+//                    }
+//
+//                    if ($sku->stock === 0) {
+//                        abort(403, $sku->good->title . '库存为零');
+//                    }
 
                     // 创建一个 OrderItem 并直接与当前订单关联
                     $item = $order->items()->make([
@@ -111,17 +112,18 @@ class OrdersController extends Controller
 
                 foreach ($good_ids as $good_id) {
                     if (!$good_sku = GoodSku::where('good_id', $good_id)->first()) {
-                        if (!$good = Good::find($good_id)) {
-                            abort(403, '不存在ID为' . $good_id . '的商品');
-                        }
-
-                        if (!$good->on_sale) {
-                            abort(403, $good->title . '未上架');
-                        }
-
-                        if ($good->stock === 0) {
-                            abort(403, $good->title . '库存为零');
-                        }
+                        $good = Good::find($good_id);
+//                        if (!$good = Good::find($good_id)) {
+//                            abort(403, '不存在ID为' . $good_id . '的商品');
+//                        }
+//
+//                        if (!$good->on_sale) {
+//                            abort(403, $good->title . '未上架');
+//                        }
+//
+//                        if ($good->stock === 0) {
+//                            abort(403, $good->title . '库存为零');
+//                        }
 
                         // 创建一个 OrderItem 并直接与当前订单关联
                         $item = $order->items()->make([
