@@ -174,16 +174,16 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/Admin/Controllers/wx" />
       <recent name="$PROJECT_DIR$/app/Admin/Extensions" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/admin/orders" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Admin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -382,7 +382,7 @@
       <workItem from="1594445623273" duration="582000" />
       <workItem from="1594538763692" duration="322000" />
       <workItem from="1594801890912" duration="284000" />
-      <workItem from="1594862034195" duration="3120000" />
+      <workItem from="1594862034195" duration="3972000" />
     </task>
     <servers />
   </component>
