@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="" />
+    <list default="true" id="d8b66364-007b-48d1-bf4d-58e9079cbb13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +161,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -380,7 +382,21 @@
       <workItem from="1594445623273" duration="582000" />
       <workItem from="1594538763692" duration="322000" />
       <workItem from="1594801890912" duration="284000" />
-      <workItem from="1594862034195" duration="6119000" />
+      <workItem from="1594862034195" duration="6785000" />
+      <workItem from="1594976705721" duration="248000" />
+      <workItem from="1595048282283" duration="390000" />
+      <workItem from="1595049181601" duration="212000" />
+      <workItem from="1595049442281" duration="66000" />
+      <workItem from="1595052873608" duration="1114000" />
+      <workItem from="1595061993779" duration="388000" />
+      <workItem from="1595164299759" duration="159000" />
+      <workItem from="1595303937497" duration="1410000" />
+      <workItem from="1595310529279" duration="675000" />
+      <workItem from="1595383630417" duration="881000" />
+      <workItem from="1595410459845" duration="91000" />
+      <workItem from="1595639549565" duration="609000" />
+      <workItem from="1595907778820" duration="975000" />
+      <workItem from="1596081999546" duration="127000" />
     </task>
     <servers />
   </component>
@@ -399,16 +415,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/_ide_helper.php</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
